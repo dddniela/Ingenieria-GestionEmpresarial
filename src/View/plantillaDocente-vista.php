@@ -1,13 +1,13 @@
 <div class="row g-0">
   <div class="position-relative w-100 overflow-hidden">
-    <img class="w-100 img-fluid" src="img/IMG_3889.webp" alt="" />
+    <img class="w-100 img-fluid" src="img/portadas/IMG_2123.png" alt="" />
     <div class="position-absolute top-50 start-50 translate-middle w-100">
       <div
         class="d-flex flex-column justify-content-center align-items-center text-center"
       >
         <h1 class="fw-bold text-warning">Plantilla Docente</h1>
         <h1 class="fw-bold text-light d-md-flex d-none">
-          Ingeniería Química
+        Ingeniería en Gestión Empresarial
         </h1>
       </div>
     </div>
