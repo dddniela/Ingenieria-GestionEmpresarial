@@ -5,8 +5,8 @@
       <div
         class="d-flex flex-column justify-content-center align-items-center text-center"
       >
-        <h1 class="fw-bold text-warning">Plantilla Docente</h1>
-        <h1 class="fw-bold text-light d-md-flex d-none">
+        <h1 class="fw-bold text-warning text-stroke">Plantilla Docente</h1>
+        <h1 class="fw-bold text-light d-md-flex d-none text-stroke">
         Ingeniería en Gestión Empresarial
         </h1>
       </div>

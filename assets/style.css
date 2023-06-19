@@ -634,3 +634,11 @@
 	width: 100%;
 	object-fit: cover;
 }
+
+.text-stroke {
+  text-shadow:
+    -0.5px -0.5px 0 black,  
+     0.5px -0.5px 0 black,
+    -0.5px 0.5px 0 black,
+     0.5px 0.5px 0 black; /* Sombra para simular el trazado */
+}

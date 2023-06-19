@@ -13,8 +13,8 @@
         <img src="img/portadas/IMG_1123.png" class="d-block w-100 align-middle" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption d-flex flex-column">
-            <h1 class="mainTitle text-center font-bold m-2">Ingeniería en Gestión Empresarial</h1>
-            <h2 class="mainSubtitle text-center font-bold">Desarrolla habilidades directivas</h1>
+            <h1 class="mainTitle text-center font-bold m-2 text-stroke">Ingeniería en Gestión Empresarial</h1>
+            <h2 class="mainSubtitle text-center font-bold text-stroke">Desarrolla habilidades directivas</h1>
               <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=3">Explorar</a>
               </p>
           </div>
@@ -25,8 +25,8 @@
         <img src="img/portadas/IMG_ECO1883.png" class="d-block w-100 align-middle" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption">
-            <h1 class="mainTitle text-center font-bold m-2">Ingeniería en Gestión Empresarial</h1>
-            <h2 class="mainSubtitle text-center font-bold">Diseña estrategias de mercadotecnia</h1>
+            <h1 class="mainTitle text-center font-bold m-2 text-stroke">Ingeniería en Gestión Empresarial</h1>
+            <h2 class="mainSubtitle text-center font-bold text-stroke">Diseña estrategias de mercadotecnia</h1>
               <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=1">Explorar</a></p>
           </div>
         </div>
@@ -36,8 +36,8 @@
         <img src="img/portadas/IMG_ECO1293.png" class="d-block w-100 align-middle" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption">
-            <h1 class="mainTitle text-center font-bold m-2">Ingeniería en Gestión Empresarial</h1>
-            <h2 class="mainSubtitle text-center font-bold d-none d-md-inline-flex">Colabora con la comunidad</h1>
+            <h1 class="mainTitle text-center font-bold m-2 text-stroke">Ingeniería en Gestión Empresarial</h1>
+            <h2 class="mainSubtitle text-center font-bold d-none d-md-inline-flex text-stroke">Colabora con la comunidad</h1>
             <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=5">Explorar</a></p>
           </div>
         </div>

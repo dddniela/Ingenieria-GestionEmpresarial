@@ -4,8 +4,8 @@
         <img class="w-100 img-fluid" src="img/portadas/IMG_2834.png" alt="">
         <div class="position-absolute top-50 start-50 translate-middle w-100">
             <div class="d-flex flex-column justify-content-center align-items-center text-center">
-                <h1 class="fw-bold text-warning">Perfil de Egreso</h1>
-                <h1 class="fw-bold text-light d-md-flex d-none">Ingeniería en Gestión Empresarial</h1>
+                <h1 class="fw-bold text-warning text-stroke">Perfil de Egreso</h1>
+                <h1 class="fw-bold text-light d-md-flex d-none text-stroke">Ingeniería en Gestión Empresarial</h1>
             </div>
         </div>
     </div>
