@@ -21,7 +21,6 @@ class Materia
         $this->connection = $conn;
     }
 
-
     function icono($Area)
     {
         $ruta_img = "";
@@ -213,6 +212,11 @@ class Materia
     function imprimir8voSemestre()
     {
         return $this->imprimir(8);
+    }
+
+    function imprimir9noSemestre()
+    {
+        return $this->imprimir(9);
     }
 
 }

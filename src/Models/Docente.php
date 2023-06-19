@@ -92,13 +92,12 @@ class Docente
     public function getDocentes()
     {
         $docentes = array();
-        $sql = "SELECT `tbl_docente`.`docenteId`, `tbl_docente`.`nombre`, `tbl_docente`.`descripcion`, `tbl_docente`.`informacionAcademica`,
-        `tbl_docente`.`materias`, `tbl_docente`.`contacto`, `tbl_docente`.`urlImagen`, `tbl_docente`.`status`, `tbl_docente`.`createdBy`,
-        `tbl_docente`.`createdAt`, `tbl_docente`.`updatedBy`, `tbl_docente`.`updatedAt` FROM `tbl_docente` AS `tbl_docente`
-        INNER JOIN `tbl_carrera_docente` AS `tbl_carrera_docente`
-        ON `tbl_docente`.`docenteId` = `tbl_carrera_docente`.`docenteId`
-        AND `tbl_carrera_docente`.`status` = 1 
-        AND `tbl_carrera_docente`.`carreraId`=" . $GLOBALS['carreraID'] . " WHERE `tbl_docente`.`status` = 1;";
+        $sql = "SELECT tbl_docente.docenteId, tbl_docente.nombre, tbl_docente.descripcion, tbl_docente.informacionAcademica,
+        tbl_docente.materias, tbl_docente.contacto, tbl_docente.urlImagen FROM tbl_docente AS tbl_docente
+        INNER JOIN tbl_carrera_docente AS tbl_carrera_docente
+        ON tbl_docente.docenteId = tbl_carrera_docente.docenteId
+        AND tbl_carrera_docente.status = 1 
+        AND tbl_carrera_docente.carreraId=" . $GLOBALS['carreraID'] . " WHERE tbl_docente.status = 1;";
         $docentes = mysqli_query($this->connection, $sql);
         return $docentes;
     }
@@ -106,14 +105,13 @@ class Docente
     function obtenerInformacion($limiteInferior)
     {
         $cn = $this->connection;
-        $stmt = $cn->prepare("SELECT `tbl_docente`.`docenteId`, `tbl_docente`.`nombre`, `tbl_docente`.`descripcion`, `tbl_docente`.`informacionAcademica`,
-        `tbl_docente`.`materias`, `tbl_docente`.`contacto`, `tbl_docente`.`urlImagen`, `tbl_docente`.`status`, `tbl_docente`.`createdBy`,
-        `tbl_docente`.`createdAt`, `tbl_docente`.`updatedBy`, `tbl_docente`.`updatedAt` FROM `tbl_docente` AS `tbl_docente`
-        INNER JOIN `tbl_carrera_docente` AS `tbl_carrera_docente`
-        ON `tbl_docente`.`docenteId` = `tbl_carrera_docente`.`docenteId`
-        AND `tbl_carrera_docente`.`status` = 1 
-        AND `tbl_carrera_docente`.`carreraId`=" . $GLOBALS['carreraID']
-            . " WHERE `tbl_docente`.`status` = 1  ORDER BY nombre ASC LIMIT ?,?");
+        $stmt = $cn->prepare("SELECT tbl_docente.docenteId, tbl_docente.nombre, tbl_docente.descripcion, tbl_docente.informacionAcademica,
+        tbl_docente.materias, tbl_docente.contacto, tbl_docente.urlImagen FROM tbl_docente AS tbl_docente
+        INNER JOIN tbl_carrera_docente AS tbl_carrera_docente
+        ON tbl_docente.docenteId = tbl_carrera_docente.docenteId
+        AND tbl_carrera_docente.status = 1 
+        AND tbl_carrera_docente.carreraId=" . $GLOBALS['carreraID']
+            . " WHERE tbl_docente.status = 1  ORDER BY nombre ASC LIMIT ?,?");
         $limiteInferior =  $limiteInferior - 1;
         $limiteSuperior =  12;
         $stmt->bind_param('ii', $limiteInferior, $limiteSuperior);
@@ -211,12 +209,10 @@ class Docente
 
     function generarPaginacion()
     {
-        //genera la paginación
         $docentes = $this->getDocentes();
         $numRows = mysqli_num_rows($docentes);
         $numPaginas = $numRows / 12;
         $residuo = $numRows % 12;
-
         if ($residuo > 0) {
             $numPaginas = $numPaginas + 1;
         }

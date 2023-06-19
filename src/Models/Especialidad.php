@@ -18,7 +18,7 @@ class Especialidad
     public function getEspecialidades()
     {
         $cn = $this->connection;
-        $sqlQ = "SELECT * FROM tbl_especialidad WHERE carreraId=" . $GLOBALS['carreraID'] . " AND status = 1;";
+        $sqlQ = "SELECT especialidadId, nombre FROM tbl_especialidad WHERE carreraId=" . $GLOBALS['carreraID'] . " AND status = 1;";
         $data = $cn->query($sqlQ);
         return $data;
     }
@@ -203,7 +203,7 @@ class Especialidad
     function imprimirEspecialidad($especialidadId)
     {
         $cn = $this->connection;
-        $sqlQ = "SELECT * FROM tbl_materia WHERE carreraId=" . $GLOBALS['carreraID'] . " AND especialidadId=$especialidadId AND status = 1;;";
+        $sqlQ = "SELECT * FROM tbl_materia WHERE carreraId=" . $GLOBALS['carreraID'] . " AND especialidadId=$especialidadId AND status = 1;";
         $data = $cn->query($sqlQ);
 
         $tabla = "";

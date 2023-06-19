@@ -5,13 +5,14 @@ require_once "src/Models/Docente.php";
 require_once("src/Models/Materia.php");
 require_once("src/Models/Especialidad.php");
 require_once("src/Models/Comunidad.php");
-$url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+$url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
 $urlControl = array(
-$_SERVER['SERVER_NAME']."/Gestion-Empresarial/",
-$_SERVER['SERVER_NAME']."/Gestion-Empresarial/?option=0");
+    $_SERVER['SERVER_NAME'] . "/Gestion-Empresarial/",
+    $_SERVER['SERVER_NAME'] . "/Gestion-Empresarial/?option=0"
+);
 
-$carreraID=1;
+$carreraID = 1;
 $conn = new Conexion();
 $conn->connect();
 $docente = new Docente();
@@ -26,33 +27,35 @@ $comunidad->setConnection($conn->getDB());
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Ingeniería, Gestión, Empresarial, Ingeniería en Gestión Empresarial">
-    <meta name="author" content="Daniela Castro Rodriguez, Nancy Daniela Mendez Arpidez, 
-    Marco Gabriel Cortes Toledo, Yelitza Magali Rosas Jimenez, Gabriel Escobar Medina">
-    <link rel="icon" href="img/itver-logo.PNG"/>
+    <meta name="author" content="Daniela Castro Rodriguez, Gabriel Escobar Medina, Nancy Daniela Mendez Arpidez,
+    Marco Gabriel Cortes Toledo, Yelitza Magali Rosas Jimenez, Ángel Manuel Sandria Pérez">
+    <link rel="icon" href="img/itver-logo.PNG" />
 
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/style.css">
     <title>Ingeniería en Gestión Empresarial</title>
 </head>
-    <?php
-        include_once "src/View/header.php";  
-        for($i = 0; $i < 2; $i++){
-            if($url==$urlControl[$i]){
-                include_once "src/View/inicio.php";     
-            }
-        }
-        if(isset($_GET['option'])){
-            include_once "src/Controllers/page-controller.php";
-        } else {
-            include_once "src/View/inicio.php";
-        }
-    ?>
 <?php
-    include_once "src/View/footer.php";
+include_once "src/View/header.php";
+for ($i = 0; $i < 2; $i++) {
+    if ($url == $urlControl[$i]) {
+        include_once "src/View/inicio.php";
+    }
+}
+if (isset($_GET['option'])) {
+    include_once "src/Controllers/page-controller.php";
+} else {
+    include_once "src/View/inicio.php";
+}
 ?>
+<?php
+include_once "src/View/footer.php";
+?>
+
 </html>
