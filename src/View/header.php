@@ -112,10 +112,10 @@
                     <li class="nav-item hover-blue">
                         <a class="nav-link active hover-blue" href="?option=4">Conócenos</a>
                     </li>
-                    <li class="nav-item hover-blue">
+                   <!-- <li class="nav-item hover-blue">
                         <a class="nav-link active hover-blue" href="?option=5">Comunidades</a>
                     </li>
-
+                    -->
                     <li class="nav-item hover-blue dropdown">
                         <a class="nav-link active dropdown-toggle hover-blue" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Enlaces

@@ -1,3 +1,10 @@
+<?php
+require_once("src/Models/Seccion.php");
+$seccion = new Seccion();
+$seccion->setConnection($conn->getDB());
+
+$objetivo = $seccion->getObjetivo();
+?>
 <!-- Portada -->
 <div class="row g-0">
     <div class="position-relative w-100 overflow-hidden">
@@ -13,6 +20,7 @@
 <!-- Fin Portada-->
 
 <!-- Objetivo general -->
+
 <section class="p-2">
     <div class="row px-2 g-0">
         <div class="col-lg-6 col-sm-12">
@@ -36,7 +44,7 @@
                 </div>
             </div>
         </div>
-
+<!--
         <div class="lightSection col-lg-6 col-12 p-4">
             <div class="d-flex justify-content-center align-items-center w-100 h-100">
                 <div class="row g-0">
@@ -49,6 +57,30 @@
                         Formar profesionales que contribuyan a la gestión de empresas e innovación de procesos; así como al
                         diseño, implementación y desarrollo de sistemas estratégicos de negocios, optimizando recursos en un
                         entorno global, con ética y responsabilidad social. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+        <div class="lightSection col-lg-6 col-12 p-4">
+            <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <h2 class="sectionTitle text-center font-bold m-3">
+                            Objetivo general
+                        </h2>
+                        <div class="sectionSeparator"></div>
+                    </div>
+                    <div class="col-12" style="text-align: center;">
+                        <p style="text-align: justify;">
+                            <?php
+                            if ($objetivo) {
+                                echo $objetivo->descripcion;
+                            }
+                            ?>
                         </p>
                     </div>
                 </div>
@@ -68,147 +100,9 @@
                 <div class="sectionSeparator"></div>
 
                 <div class="row g-0">
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/administracion.png" alt="">
-                            <p class="textoArea">Aplica habilidades directivas y de ingeniería en el diseño, gestión, fortalecimiento e innovación de
-                            las organizaciones para la toma de decisiones en forma efectiva, con una orientación sistémica y
-                            sustentable. </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/admin.png" alt="">
-                            <p class="textoArea">Diseña e innova estructuras administrativas y procesos, con base en las necesidades de las
-                            organizaciones para competir eficientemente en mercados globales.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/gestion.png" alt="">
-                            <p class="textoArea">Gestiona eficientemente los recursos de la organización con visión compartida, con el fin de
-                            suministrar bienes y servicios de calidad.  
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/social.png" alt="">
-                            <p class="textoArea">Aplica métodos cuantitativos y cualitativos en el análisis e interpretación de datos y modelado de
-                            sistemas en los procesos organizacionales, para la mejora continua atendiendo estándares de calidad mundial. </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/finanzas.png" alt="">
-                            <p class="textoArea">Diseña, y emprende nuevos negocios y proyectos empresariales sustentables en mercados
-                            competitivos, para promover el desarrollo.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/procesos.png" alt="">
-                            <p class="textoArea">Diseña e implementa estrategias de mercadotecnia basadas en información recopilada de fuentes
-                            primarias y secundarias, para incrementar la competitividad de las organizaciones. </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/software.png" alt="">
-                            <p class="textoArea">Implementa planes y programas de seguridad e higiene para el fortalecimiento del entorno laboral.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/contabilidad.png" alt="">
-                            <p class="textoArea">Gestiona sistemas integrales de calidad para la mejora de los procesos, ejerciendo un liderazgo
-                            estratégico y un compromiso ético</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/admin14.png" alt="">
-                            <p class="textoArea">Aplica las normas legales para la creación y desarrollo de las organizaciones</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/directivas.png" alt="">
-                            <p class="textoArea">. Dirige equipos de trabajo para la mejora continua y el crecimiento integral de las organizaciones.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/empresariales.png" alt="">
-                            <p class="textoArea">Interpreta la información financiera para detectar oportunidades de mejora e inversión en un mundo
-                            global, que propicien la rentabilidad del negocio.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/informatica.png" alt="">
-                            <p class="textoArea">Utiliza las nuevas tecnologías de información y comunicación en la organización, para optimizar
-                            los procesos y la eficaz toma de decisiones.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/probabilidad.png" alt="">
-                            <p class="textoArea">Promueve el desarrollo del capital humano, para la realización de los objetivos organizacionales,
-                            dentro de un marco ético y un contexto multicultural.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/investigacion.png" alt="">
-                            <p class="textoArea">Aplica métodos de investigación para desarrollar e innovar modelos, sistemas, procesos y productos
-                            en las diferentes dimensiones de la organización.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/economia.png" alt="">
-                            <p class="textoArea">Gestiona la cadena de suministro de las organizaciones con un enfoque orientado a procesos para
-                            incrementar la productividad.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/matematicas.png" alt="">
-                            <p class="textoArea">Analiza las variables económicas para facilitar la toma estratégica de decisiones en la organización.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/internacionales.png" alt="">
-                            <p class="textoArea">Actúa como agente de cambio para facilitar la mejora continua y el desempeño de las organizaciones.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 text-center p-3">
-                        <div class="area shadow-sm p-4">
-                            <img class="imagenArea items-center" src="img/iconos/portuaria.png" alt="">
-                            <p class="textoArea">Aplica métodos, técnicas y herramientas para la solución de problemas en la gestión empresarial
-                            con una visión estratégica. </p>
-                        </div>
-                    </div>
-
+                    <?php
+                    echo $seccion->imprimirPerfilEgreso();
+                    ?>
                 </div>
             </section>
             <!-- Fin Puntos del perfil de egreso -->
