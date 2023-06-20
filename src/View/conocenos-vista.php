@@ -1,3 +1,11 @@
+<?php
+require_once("src/Models/Administrativo.php");
+$administrativos = new Administrativo();
+$administrativos->setConnection($conn->getDB());
+
+$coordinador = $administrativos->getCoordinador();
+$jefeDepartamento =  $administrativos->getJefeDepartamento();
+?>
 <!-- Portada -->
 <div class="row g-0">
   <div class="position-relative w-100 overflow-hidden">
@@ -34,7 +42,7 @@
           </div>
           <div class="col-12" style="text-align: center;">
             <p style="text-align: justify;"> La carrera de Ingeniería en Gestión Empresarial pertenece al
-              departamento económico - administrativo, el objetivo principal del
+              departamento de ciencias económico-administrativas, el objetivo principal del
               departamento es proporcionar a los estudiantes recursos y apoyo para el desarrollo 
               de sus habilidades administrativas y el cumplimiento de los diferentes trámites necesarios
               a lo largo de su plan de estudios. Esto incluye la gestión de prácticas profesionales, 
@@ -60,21 +68,29 @@
       <div class="d-flex justify-content-center align-items-center w-100 h-100">
         <div class="row g-0">
           <div class="col-12">
-            <h2 class="sectionTitle text-center font-bold m-3">Claudia Guadalupe Zarrabal Gutíerrez</h2>
+            <h2 class="sectionTitle text-center font-bold m-3">
+              <?php
+              if ($jefeDepartamento) {
+                echo $jefeDepartamento->nombre;
+              }
+              ?>
+            </h2>
             <div class="sectionSeparator"></div>
             <h4 class="text-center fw-bold fs-3">
-              Jefa del Departamento de Ciencias Económico-Administrativas
+              <?php
+              if ($jefeDepartamento) {
+                echo $jefeDepartamento->nombrePuesto . " Ciencias Económico-Administrativas";
+              }
+              ?>
             </h4>
           </div>
           <div class="col-12" style="text-align: center;">
-            <h6 class="text-center fw-bold fs-6">
-              <br />
-            </h6>
             <p class="" style="text-align: justify">
-            Claudia Guadalupe Zarrabal Gutíerrez, Jefa del Departamento de Ciencias Económico-Administrativas en el
-            Tecnológico de Veracruz; Docente de Ciencias Económico Administrativas con experiencia en proyectos de innovación y mercadotenia. 
-            Como jefa del departamento tiene la función de coordinar la aplicación de los programas de estudio de Licenciatura en Administración, 
-            Ingeniería en Gestión Empresarial y posgrados 
+              <?php
+              if ($jefeDepartamento) {
+                echo $jefeDepartamento->descripcion;
+              }
+              ?>
             </p>
           </div>
         </div>
@@ -83,7 +99,7 @@
 
     <div class="col-lg-6 col-12 p-2 shadow-sm">
       <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <img class="img-fluid rounded" src="img/Docentes/claudiaZarrabalGutierrez.png" alt="">
+        <img class="img-fluid rounded" src='<?php if ($jefeDepartamento)  echo $jefeDepartamento->imagen; ?>' alt="">
       </div>
     </div>
 
@@ -91,14 +107,14 @@
 </section>
 <!--Fin Descripción Jefa/e del departamento -->
 
-<!-- Descripción Jefa/e del departamento -->
+<!-- Descripción Coordinador -->
 <div class="bg-primary pt-5"></div>
 <section class="lightSection bg-light">
   <div class="row px-2 g-0">
 
-  <div class="col-lg-6 col-12 p-2 shadow-sm">
-    <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <img class="img-fluid rounded" src="img/Docentes/ivonneRamirezGuetierrez.png" alt="">
+    <div class="col-lg-6 col-12 p-2 shadow-sm">
+      <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        <img class="img-fluid rounded" src='<?php if ($coordinador) echo $coordinador->imagen; ?>' alt="">
       </div>
     </div>
 
@@ -106,37 +122,38 @@
       <div class="d-flex justify-content-center align-items-center w-100 h-100">
         <div class="row g-0">
           <div class="col-12">
-            <h2 class="sectionTitle text-center font-bold m-3">Ivonne Ramirez Gutíerrez</h2>
+            <h2 class="sectionTitle text-center font-bold m-3">
+              <?php
+              if ($coordinador) {
+                echo $coordinador->nombre;
+              }
+              ?>
+            </h2>
             <div class="sectionSeparator"></div>
             <h4 class="text-center fw-bold fs-3">
-            Coordinadora de Ing. en Gestión Empresarial y Lic. en Administración
+              <?php
+              if ($coordinador) {
+                echo $coordinador->nombrePuesto . " de " . $coordinador->nombreCarrera;
+              }
+              ?>
             </h4>
           </div>
           <div class="col-12 px-4" style="text-align: center;">
-          <h6 class="text-center fw-bold fs-6">
-              “Frase célebre”<br />
-            </h6>
             <p class="" style="text-align: justify">
-            Ivonne Ramírez Gutiérrez, coordinadora de las carreras Ingeniería en Gestión Empresarial y 
-            Lic. en Administración en el Tecnológico de Veracruz; licenciada en Administración con maestría 
-            en Educación. En el cargo de coordinación, su función principal, es la orientación académica de 
-            los alumnos estudiantes de dichas licenciaturas a lo largo de su estancia en la Institución, 
-            para un correcto avance y aprovechamiento de su programa de estudios. Así mismo se realizan 
-            diferentes funciones en la coordinación, como lo son: consulta y cambio de NIP, realizar la 
-            estructura académica con base en las estadísticas de la población inscrita y las necesidades de 
-            grupos que así se generen dentro de los periodos semestrales así como de cursos de verano.
-
- 
+              <?php
+              if ($coordinador) {
+                echo $coordinador->descripcion;
+              }
+              ?>
             </p>
           </div>
         </div>
       </div>
     </div>
 
-
   </div>
 </section>
-<!--Fin Descripción Jefa/e del departamento -->
+<!--Fin Descripción Coordinador -->
 
 
 <!-- Instalaciones -->
@@ -152,7 +169,7 @@
             </h2>
             <div class="separadorSeccionOscura"></div>
             <h4 class="text-center text-light fw-bold fs-3">
-              Laboratorio de cómputo
+              Laboratorio de Negocios
             </h4>
           </div>
           <div class="col-12">
@@ -319,6 +336,6 @@ Fin Modals de la galería-->
 <div class="p-4 text-center">
   <h5 class="font-bold">Autores de la página:</h5>
     <p class="font-semibold">Estudiantes de la Generación 2018 - 2023</p>
-    <p>Daniela Castro Rodriguez, Nancy Daniela Mendez Arpidez, Yelitza Magali Rosas Jiménez, 
+    <p> Nancy Daniela Mendez Arpidez, Daniela Castro Rodriguez, Yelitza Magali Rosas Jiménez, 
       Marco Gabriel Cortés Toledo, Gabriel Escobar Medina </p>
 </div>
