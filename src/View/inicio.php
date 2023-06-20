@@ -172,7 +172,7 @@
           <div class="col-12 px-4" style="text-align: center;">
             <p class="text-light" style="text-align: justify;">
 
-              El departamento económico - administrativo colabora estrechamente con el cuerpo docente de la carrera de licenciatura en administración e 
+              El departamento de ciencias económico-administrativas colabora estrechamente con el cuerpo docente de la carrera de licenciatura en administración e 
               ingeniería en gestión empresarial para asegurar que se cumplan con los objetivos de aprendizaje establecidos en el plan de estudios.  <br> <br>
               También se encarga de recopilar datos y realizar seguimiento del desempeño de los estudiantes en las clases prácticas, 
               se encarga de gestionar y coordinar, asegurando un entorno propicio para el desarrollo de programas, aplicaciones y proyectos por parte de los estudiantes.
