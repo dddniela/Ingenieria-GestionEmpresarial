@@ -13,8 +13,8 @@
         <img src="img/portadas/IMG_1123.png" class="d-block w-100 align-middle" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption d-flex flex-column">
-            <h1 class="mainTitle text-center font-bold m-2 text-stroke">Ingeniería en Gestión Empresarial</h1>
-            <h2 class="mainSubtitle text-center font-bold text-stroke">Desarrolla habilidades directivas</h1>
+            <h1 class="mainTitle text-center font-bold m-2 shadow-text">Ingeniería en Gestión Empresarial</h1>
+            <h2 class="mainSubtitle text-center font-bold shadow-text">Desarrolla habilidades directivas</h1>
               <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=3">Explorar</a>
               </p>
           </div>
@@ -25,8 +25,8 @@
         <img src="img/portadas/IMG_ECO1883.png" class="d-block w-100 align-middle" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption">
-            <h1 class="mainTitle text-center font-bold m-2 text-stroke">Ingeniería en Gestión Empresarial</h1>
-            <h2 class="mainSubtitle text-center font-bold text-stroke">Diseña estrategias de mercadotecnia</h1>
+            <h1 class="mainTitle text-center font-bold m-2 shadow-text">Ingeniería en Gestión Empresarial</h1>
+            <h2 class="mainSubtitle text-center font-bold shadow-text">Diseña estrategias de mercadotecnia</h1>
               <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=1">Explorar</a></p>
           </div>
         </div>
@@ -36,8 +36,8 @@
         <img src="img/portadas/IMG_ECO1293.png" class="d-block w-100 align-middle" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption">
-            <h1 class="mainTitle text-center font-bold m-2 text-stroke">Ingeniería en Gestión Empresarial</h1>
-            <h2 class="mainSubtitle text-center font-bold d-none d-md-inline-flex text-stroke">Colabora con la comunidad</h1>
+            <h1 class="mainTitle text-center font-bold m-2 shadow-text">Ingeniería en Gestión Empresarial</h1>
+            <h2 class="mainSubtitle text-center font-bold d-none d-md-inline-flex shadow-text">Colabora con la comunidad</h1>
             <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=5">Explorar</a></p>
           </div>
         </div>
@@ -253,9 +253,9 @@
   <h2 class="sectionTitle text-center font-bold m-3">Enlaces</h2>
   <div class="sectionSeparator"></div>
 
-  <div class="row g-0">
+  <div class="row g-0 justify-content-center">
 
-    <div class="col-lg-4 col-sm-6 text-center p-3">
+    <div class="col-5 text-center p-5">
       <div class="area shadow-sm p-4 rounded-3">
         <a href="http://gestion.itver.edu.mx/servicio-social/" target="_blank" >
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4 p-1" src="img/gestionVinculacion.webp" alt="">
@@ -264,7 +264,7 @@
       </div>
     </div>
 
-    <div class="col-lg-4 col-sm-6 text-center p-3">
+    <div class="col-5 text-center p-5">
       <div class="area shadow-sm p-4 rounded-3">
         <a href="http://www.veracruz.tecnm.mx/" target="_blank" >
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4  p-1" src="img/ITVER-9.webp" alt="">
@@ -272,7 +272,7 @@
         <h3 class="areaTitle text-center font-bold text-xl">TECNM Veracruz</h3>
       </div>
     </div>
-
+<!-- 
     <div class="col-lg-4 col-sm-6 text-center p-3">
       <div class="area shadow-sm p-4 rounded-3">
         <a href="?option=5">
@@ -280,7 +280,7 @@
         </a>
         <h3 class="areaTitle text-center font-bold text-xl">Comunidades</h3>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </section>
@@ -359,7 +359,7 @@
       </div>
     </div>
   </div>
-  <div class="row g-0">
+  <!-- <div class="row g-0">
     <h4 class="sectionTitle  text-center font-bold">Departamento Económico - Administrativo</h4>
     <div class="d-flex flex-row justify-content-center">
       <a class="mx-2" href="https://www.facebook.com/profile.php?id=100065327956621" target="_blank"
@@ -376,7 +376,7 @@
               alt="">
           </div>
         </a>
-    </div>
+    </div> -->
   </div>
 </section>
 <!-- Fin Área de redes sociales -->

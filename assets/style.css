@@ -10,6 +10,10 @@
   background-color: #facc15;
 }
 
+.shadow-text {
+  text-shadow: 2px 2px 10px black;
+}
+
 .morado-indigo {
   background-color: #312e81;
 }

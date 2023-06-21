@@ -125,8 +125,6 @@
                           <li><a class="dropdown-item hover-blue" target="_blank" href="http://www.veracruz.tecnm.mx/">ITVER</a></li>
                           <li><a class="dropdown-item hover-blue" target="_blank" href="https://sii.veracruz.tecnm.mx/">SII</a></li>
                           <li><a class="dropdown-item hover-blue" target="_blank" href="https://elearning.veracruz.tecnm.mx/">Moodle</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://www.facebook.com/CISITVER">CIS - FB</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://www.youtube.com/channel/UCXRR-JFPrMfxV0vgzVusT0g">CIS - Youtube</a></li>
                           <li><a class="dropdown-item hover-blue" target="_blank" href="http://www.veracruz.tecnm.mx/index.php/mapa-del-tecnm-veracruz">Mapa virtual 3D del ITVER</a></li>
                           <li><a class="dropdown-item hover-blue" target="_blank" href="https://elibro.net/es/lc/itver/login_usuario/">Biblioteca eLibro</a></li>
                           <li><a class="dropdown-item hover-blue" target="_blank" href="https://www.veracruz.tecnm.mx/index.php/normateca/documentos-operativos/manuales">Manuales del ITVER</a></li>
