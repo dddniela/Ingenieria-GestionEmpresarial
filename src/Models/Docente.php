@@ -89,52 +89,66 @@ class Docente
         return $this->urlImagen;
     }
 
-    public function getDocentes(){
+    public function getDocentes()
+    {
         $docentes = array();
-        $sql = 'SELECT * FROM tbl_docente WHERE carreraId=11 AND status = 1 ORDER BY nombre ASC';
-        $docentes = mysqli_query($this->connection,$sql);
+        $sql = "SELECT tbl_docente.docenteId, tbl_docente.nombre, tbl_docente.descripcion, tbl_docente.informacionAcademica,
+        tbl_docente.materias, tbl_docente.contacto, tbl_docente.urlImagen FROM tbl_docente AS tbl_docente
+        INNER JOIN tbl_carrera_docente AS tbl_carrera_docente
+        ON tbl_docente.docenteId = tbl_carrera_docente.docenteId
+        AND tbl_carrera_docente.status = 1 
+        AND tbl_carrera_docente.carreraId=" . $GLOBALS['carreraID'] . " WHERE tbl_docente.status = 1;";
+        $docentes = mysqli_query($this->connection, $sql);
         return $docentes;
     }
 
-    function obtenerInformacion($LimiteInferior){
+    function obtenerInformacion($limiteInferior)
+    {
         $cn = $this->connection;
-        $stmt = $cn->prepare("SELECT * FROM tbl_docente WHERE carreraId=11 ORDER BY nombre ASC LIMIT ?,?");
-        $LimiteInferior =  $LimiteInferior-1;
-        $LimiteSuperior =  12;
-        $stmt->bind_param('ii', $LimiteInferior, $LimiteSuperior);
+        $stmt = $cn->prepare("SELECT tbl_docente.docenteId, tbl_docente.nombre, tbl_docente.descripcion, tbl_docente.informacionAcademica,
+        tbl_docente.materias, tbl_docente.contacto, tbl_docente.urlImagen FROM tbl_docente AS tbl_docente
+        INNER JOIN tbl_carrera_docente AS tbl_carrera_docente
+        ON tbl_docente.docenteId = tbl_carrera_docente.docenteId
+        AND tbl_carrera_docente.status = 1 
+        AND tbl_carrera_docente.carreraId=" . $GLOBALS['carreraID']
+            . " WHERE tbl_docente.status = 1  ORDER BY nombre ASC LIMIT ?,?");
+        $limiteInferior =  $limiteInferior - 1;
+        $limiteSuperior =  12;
+        $stmt->bind_param('ii', $limiteInferior, $limiteSuperior);
         $stmt->execute();
         $result = $stmt->get_result();
         $docentes = $result->fetch_all(MYSQLI_ASSOC);
         return $result;
     }
 
-    function imprimirDatos($LimInferior, $LimSuperior){
-        $docentes = $this->obtenerInformacion($LimInferior);
+    function imprimirDatos($limInferior, $limSuperior)
+    {
+        $docentes = $this->obtenerInformacion($limInferior);
         $codigo = "";
         $cont = 1;
         foreach ($docentes as $key => $docente) {
-                $docenteId = $docente['docenteId'];
-                $nombre = $docente['nombre'];
-                $descripcion = $docente['descripcion'];
-                $informacionAcademica = $docente['informacionAcademica'];
-                $materias = $docente['materias'];
-                $contacto = $docente['contacto'];
-                $urlImagen = $docente['urlImagen'];
-                $codigo .= "<div class='col-lg-4 col-sm-6 text-center p-3'>
+            $docenteId = $docente['docenteId'];
+            $nombre = $docente['nombre'];
+            $descripcion = $docente['descripcion'];
+            $informacionAcademica = $docente['informacionAcademica'];
+            $materias = $docente['materias'];
+            $contacto = $docente['contacto'];
+            $urlImagen = $docente['urlImagen'];
+            $codigo .= "<div class='col-lg-4 col-sm-6 text-center p-3'>
                                 <div class='area shadow-sm p-4 rounded-3'>
                                     <div class='d-flex flex-row justify-content-center my-1'>
-                                        <img class='rounded-circle p-1 bg-primary imagen-docentes' src='img/Docentes/".$urlImagen ."' alt=''>
+                                        <img class='rounded-circle p-1 bg-primary imagen-docentes' src='img/Docentes/" . $urlImagen . "' alt=''>
                                     </div>
                                     <div class='d-flex flex-row justify-content-center'>
                                         <h3 class='tituloAreaDocente text-center font-bold text-xl'>$nombre</h3>
                                     </div>
                                     <div class='d-flex flex-row justify-content-center'>
-                                        <button type='button' class='btn btn-warning font-bold' data-bs-toggle='modal' data-bs-target='#ModalDocente".$docenteId."'>Ver más</button>
+                                        <button type='button' class='btn btn-warning font-bold' data-bs-toggle='modal' data-bs-target='#ModalDocente" . $docenteId . "'>Ver más</button>
                                     </div>
                                 </div>
                             </div>";
 
-                $codigo .= "<div class='modal fade' id='ModalDocente".$docenteId."' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+            $codigo .= "<div class='modal fade' id='ModalDocente" . $docenteId . "' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                                 <div class='modal-dialog modal-lg'>
                                     <div class='modal-content'>
                                         <div class='modal-header azul-medio'>
@@ -146,7 +160,7 @@ class Docente
                                             <div class='row justify-content-center m-2'>
                                                 <div class='col-7 col-lg-auto justify-content-center m-2'>
                                                     <div class='d-flex justify-content-center'>
-                                                        <img class='rounded-circle p-1 bg-primary imagen-docentesModal' src='img/Docentes/".$urlImagen."' alt=''>
+                                                        <img class='rounded-circle p-1 bg-primary imagen-docentesModal' src='img/Docentes/" . $urlImagen . "' alt=''>
                                                     </div>
                                                 </div>
                                                 <div class='col-12 col-lg-7 justify-content-center align-items-center m-2'>
@@ -193,60 +207,59 @@ class Docente
         return $codigo;
     }
 
-    function generarPaginacion(){
-        $cn = $this->connection;
-        $sqlSelect = "SELECT COUNT(docenteId) AS numrows FROM tbl_docente where status=1;";
-        $ResultSet = $cn->query($sqlSelect);
-        $numRows = $ResultSet->fetch_assoc();
-        $numPaginas = $numRows['numrows'] / 12;
-        $Residuo = $numRows['numrows'] % 12;
-        if($Residuo > 0){
+    function generarPaginacion()
+    {
+        $docentes = $this->getDocentes();
+        $numRows = mysqli_num_rows($docentes);
+        $numPaginas = $numRows / 12;
+        $residuo = $numRows % 12;
+        if ($residuo > 0) {
             $numPaginas = $numPaginas + 1;
         }
         $i = 1;
-        $LimInferior = 1;
-        $LimSuperior = 12;
+        $limInferior = 1;
+        $limSuperior = 12;
         $paginacion = '';
         $paginacion .= '<nav aria-label="Page navigation example">';
         $paginacion .= '<ul class="pagination justify-content-center">';
-        if(isset($_GET['inferior'])){
-            if($_GET['inferior'] == 1){
+        if (isset($_GET['inferior'])) {
+            if ($_GET['inferior'] == 1) {
                 $paginacion .= '<li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>';
-            } else{
+            } else {
                 $LI = $_GET['inferior'] - 12;
                 $LS = $_GET['superior'] - 12;
-                $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior='.$LI.'&superior='.$LS.'">Anterior</a></li>';
-            } 
-        } else{
+                $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $LI . '&superior=' . $LS . '">Anterior</a></li>';
+            }
+        } else {
             $paginacion .= '<li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>';
         }
-        while($i <= $numPaginas){
-            if(isset($_GET['superior'])){
-                if($LimSuperior == $_GET['superior']){
-                    $paginacion .= '<li class="page-item active"><a class="page-link" href="?option=2&inferior='.$LimInferior.'&superior='.$LimSuperior.'">'.$i.'</a></li>';
-                }else{
-                    $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior='.$LimInferior.'&superior='.$LimSuperior.'">'.$i.'</a></li>';
+        while ($i <= $numPaginas) {
+            if (isset($_GET['superior'])) {
+                if ($limSuperior == $_GET['superior']) {
+                    $paginacion .= '<li class="page-item active"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
+                } else {
+                    $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
                 }
-            }else{
-                if($i == 1){
-                    $paginacion .= '<li class="page-item active"><a class="page-link" href="?option=2&inferior='.$LimInferior.'&superior='.$LimSuperior.'">'.$i.'</a></li>';
-                }else{
-                    $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior='.$LimInferior.'&superior='.$LimSuperior.'">'.$i.'</a></li>';
-                }   
+            } else {
+                if ($i == 1) {
+                    $paginacion .= '<li class="page-item active"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
+                } else {
+                    $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
+                }
             }
             $i = $i + 1;
-            $LimInferior = $LimInferior + 12;
-            $LimSuperior = $LimSuperior + 12;
+            $limInferior = $limInferior + 12;
+            $limSuperior = $limSuperior + 12;
         }
-        if(isset($_GET['superior'])){
-            if($_GET['superior'] >= $numRows){
+        if (isset($_GET['superior'])) {
+            if ($_GET['superior'] >= $numRows) {
                 $paginacion .= '<li class="page-item disabled"><a class="page-link" href="#">Siguiente</a></li>';
-            } else{
+            } else {
                 $LI = $_GET['inferior'] + 12;
                 $LS = $_GET['superior'] + 12;
-                $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior='.$LI.'&superior='.$LS.'">Siguiente</a></li>';
-            } 
-        } else{
+                $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $LI . '&superior=' . $LS . '">Siguiente</a></li>';
+            }
+        } else {
             $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=13&superior=24">Siguiente</a></li>';
         }
         $paginacion .= '</ul>';

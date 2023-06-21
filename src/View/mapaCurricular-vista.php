@@ -1,10 +1,10 @@
 <div class="row g-0">
     <div class="position-relative w-100 overflow-hidden">
-        <img class="w-100 img-fluid" src="img/IMG_3884.webp" alt="">
+        <img class="w-100 img-fluid" src="img/portadas/IMG_3122.png" alt="">
         <div class="position-absolute top-50 start-50 translate-middle w-100">
             <div class="d-flex flex-column justify-content-center align-items-center text-center">
-                <h1 class="fw-bold text-warning">Mapa Curricular</h1>
-                <h1 class="fw-bold text-light d-md-flex d-none">Ingeniería Química</h1>
+                <h1 class="fw-bold text-warning text-stroke">Mapa Curricular</h1>
+                <h1 class="fw-bold text-light d-md-flex d-none text-stroke">Ingeniería en Gestión Empresarial</h1>
             </div>
         </div>
     </div>
@@ -58,11 +58,7 @@
                         data-bs-target="#tab-semestre8" type="button" aria-controls="tab-semestre8"
                         aria-selected="false">8vo Semestre</button>
                 </li>
-                <li>
-                    <button class="dropdown-item" id="tab-semestre9-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre9" type="button" aria-controls="tab-semestre9"
-                        aria-selected="false">9no Semestre</button>
-                </li>
+                
             </ul>
         </li>
     </ul>
@@ -100,10 +96,7 @@
             <button class="nav-link" id="tab-semestre8-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre8"
                 type="button" role="tab" aria-controls="tab-semestre8" aria-selected="false">8vo Semestre</button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre9-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre9"
-                type="button" role="tab" aria-controls="tab-semestre9" aria-selected="false">9no Semestre</button>
-        </li>
+        
     </ul>
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="tab-semestre1" role="tabpanel" aria-labelledby="tab-semestre1-tab">
@@ -177,17 +170,8 @@
 
                 ?>
             </div>
-
         </div>
-        <div class="tab-pane fade" id="tab-semestre9" role="tabpanel" aria-labelledby="tab-semestre9-tab">
-            <div class="container">
-                <?php
-
-                echo $materia->imprimir9noSemestre();
-
-                ?>
-            </div>
-        </div>
+        
     </div>
 
     <div class='modal fade' id='modalReticula' tabindex='-1' aria-labelledby='modalReticula' aria-hidden='true'>
@@ -264,7 +248,7 @@
 
             <div class="col-lg-6 col-12 p-2 shadow-sm">
                 <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                    <img class="img-fluid rounded" src="img/IMG-1234.webp" alt="">
+                    <img class="img-fluid rounded" src="img/especialidad2.png" alt="">
                 </div>
             </div>
 
@@ -435,7 +419,7 @@
 
 <!-- Residencias profesionales -->
 <div class="bg-primary pt-5">
-    <img src="img/IMG_0337.webp" class="w-full" alt="">
+    <img src="img/P29.webp" class="w-full" alt="">
     <section class="darkSection bg-dark">
         <div class="row px-2 g-0">
             <div class="col-lg-12 col-12 py-4">
@@ -551,7 +535,7 @@
 
         <div class="col-lg-6 col-12 p-2 shadow-sm">
             <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                <img class="img-fluid rounded" src="img/IMG_1245.webp" alt="">
+                <img class="img-fluid rounded" src="img/IMG_ECO31.webp" alt="">
             </div>
         </div>
 
