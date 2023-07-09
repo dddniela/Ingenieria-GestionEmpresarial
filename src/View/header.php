@@ -4,25 +4,29 @@
     <nav class="navbar navbar-expand navbar-dark bg-gob">
         <!-- Logo de Gobernación -->
         <a class="navbar-brand" href="https://www.gob.mx/" target="_blank">
-            <img src="img/logo-gob.svg" alt="Gobierno de México" height="30"> 
+            <img src="img/logo-gob.svg" alt="Gobierno de México" height="30">
         </a>
         <!-- Links -->
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarText">
             <ul class="navbar-nav ml-auto d-none d-sm-flex">
                 <li class="nav-item">
-                    <a class="nav-link active" href="https://www.gob.mx/gobierno" target="_blank" alt="Gobierno">Gobierno</a>
+                    <a class="nav-link active" href="https://www.gob.mx/gobierno" target="_blank"
+                        alt="Gobierno">Gobierno</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="https://www.participa.gob.mx/" target="_blank" alt="Participa">Participa</a>
+                    <a class="nav-link active" href="https://www.participa.gob.mx/" target="_blank"
+                        alt="Participa">Participa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="https://datos.gob.mx/" target="_blank" alt="Datos">Datos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="https://www.gob.mx/busqueda" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
                     </a>
                 </li>
             </ul>
@@ -30,7 +34,7 @@
     </nav>
 
 
-<!-- Logotipos de TECNM -->
+    <!-- Logotipos de TECNM -->
     <div class="row g-0 d-none d-md-flex">
         <!-- Logo de Gobierno -->
         <div class="col align-items-start">
@@ -75,18 +79,59 @@
             </div>
         </div>
         <div class="col-sm-auto justify-content-end d-none d-xl-block">
-            <a class="text-decoration-none" href="https://login.microsoftonline.com/?whr=tecnm.mx" target="_blank">
-				<img style="height:40%;" src="img/iconos/correo-icono.png" alt="Buzón">
-			</a>
-            <a class="text-decoration-none" href="https://www.tecnm.mx/" target="_blank">
-                <img src="img/idiomas.png" height="40" alt="Gobierno de México">
-            </a>
-            <button class="btnCambioTexto" onclick="return cambiarTexto('+')">A+</button>
-            <button class="btnCambioTexto" onclick="return cambiarTexto('-')">A-</button>
+            <div class="text-right">
+                <a href="https://globalpage-prod.webex.com/join?surl=https%3A%2F%2Fsignin.webex.com%2Fcollabs%2F%23%2Fmeetings%2Fjoinbynumber%3FTrackID%3D%26hbxref%3D%26goid%3Dattend-meeting"
+                    title="Microsoft Teams" target="_blank" style="text-decoration: none;">
+                    <img loading='lazy' height="40" src="img/encabezado/microsoft_teams.png" alt="MT">
+                </a>
+                <a href="https://login.microsoftonline.com/?whr=tecnm.mx" title="Correo Institucional" target="_blank"
+                    style="text-decoration: none;">
+                    <img loading='lazy' height="40" src="img/encabezado/correo-icono.png" alt="Buzón">
+                </a>
+                <a href="pdf/Calendario_Academico_2019-2020.pdf" title="Calendario Académico" target="_blank"
+                    style="text-decoration: none;">
+                    <img loading='lazy' height="40" src="img/encabezado/calendario-icono.png"
+                        alt="Calendario Académico">
+                </a>
+
+                <!-- Traductor -->
+                <a href='?idioma=mandarin#googtrans(es|zh-CN)' class='mr-3' style="text-decoration: none;">
+                    <img height="40" src='img/encabezado/china-icono.png' title='Mandarín' alt='Idioma Mandarín'>
+                </a>
+                <a href='?idioma=ingles#googtrans(es|en)' class='mr-3' style="text-decoration: none;">
+                    <img height="40" src='img/encabezado/usa-icono.png' title='Inglés' alt='Idioma Inglés'>
+                </a>
+                <a href='?idioma=frances#googtrans(es|fr)' class='mr-3' style="text-decoration: none;">
+                    <img height="40" src='img/encabezado/francia-icono.png' title='Francés' alt='Idioma Francés'>
+                </a>
+                <a href='?idioma=español#googtrans(es|es)' class='mr-3' style="text-decoration: none;">
+                    <img height="40" src='img/encabezado/mexico-icono.png' title='Español' alt='Idioma Español'>
+                </a>
+                <a href='?idioma=coreano#googtrans(es|ko)' class='mr-3' style="text-decoration: none;">
+                    <img height="40" src='img/encabezado/corea-icono.png' title='Español' alt='Idioma Español'>
+                </a>
+
+                <img loading='lazy' height="40" title="Accesibilidad" src="img/encabezado/ojo-icono.png"
+                    alt="Débil Visual" />
+
+                <a class="btn--accesibilidad contraste" height="40">
+                    <svg class="svg-inline--fa fa-adjust fa-w-16" height="40" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="adjust" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512" data-fa-i2svg="">
+                        <path fill="#1B396A"
+                            d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z">
+                            <title>Contraste</title>
+                        </path>
+                    </svg>
+                </a>
+                <button class="btnCambioTexto" onclick="return cambiarTexto('+')">A+</button>
+                <button class="btnCambioTexto" onclick="return cambiarTexto('-')">A-</button>
+                <button class="btnCambioTexto" onclick="resetLetra()" title="Restablecer tamaño">A</button>
+            </div>
         </div>
     </div>
 
-<!-- Barra de navegación -->
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #1B396A;">
         <div class="container-fluid">
             <!-- Botón de navegación para pantallas SM y MD -->
@@ -112,25 +157,35 @@
                     <li class="nav-item hover-blue">
                         <a class="nav-link active hover-blue" href="?option=4">Conócenos</a>
                     </li>
-                   <!-- <li class="nav-item hover-blue">
+                    <!-- <li class="nav-item hover-blue">
                         <a class="nav-link active hover-blue" href="?option=5">Comunidades</a>
-                    </li>
-                    -->
+                    </li> -->
                     <li class="nav-item hover-blue dropdown">
-                        <a class="nav-link active dropdown-toggle hover-blue" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Enlaces
+                        <a class="nav-link active dropdown-toggle hover-blue" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Enlaces
                         </a>
-                        <ul class="dropdown-menu"  style="background-color: #312e81;" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://www.tecnm.mx/">TECNM</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="http://www.veracruz.tecnm.mx/">ITVER</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://sii.veracruz.tecnm.mx/">SII</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://elearning.veracruz.tecnm.mx/">Moodle</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="http://www.veracruz.tecnm.mx/index.php/mapa-del-tecnm-veracruz">Mapa virtual 3D del ITVER</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://elibro.net/es/lc/itver/login_usuario/">Biblioteca eLibro</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://www.veracruz.tecnm.mx/index.php/normateca/documentos-operativos/manuales">Manuales del ITVER</a></li>
-                          <li><a class="dropdown-item hover-blue" target="_blank" href="https://bit.ly/3KVYAol">Reglamento de Estudiantes del TecNM</a></li>
+                        <ul class="dropdown-menu" style="background-color: #312e81;" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="https://www.tecnm.mx/">TECNM</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="http://www.veracruz.tecnm.mx/">ITVER</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="https://sii.veracruz.tecnm.mx/">SII</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="https://elearning.veracruz.tecnm.mx/">Moodle</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="http://www.veracruz.tecnm.mx/index.php/mapa-del-tecnm-veracruz">Mapa virtual
+                                    3D del ITVER</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="https://elibro.net/es/lc/itver/login_usuario/">Biblioteca eLibro</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="https://www.veracruz.tecnm.mx/index.php/normateca/documentos-operativos/manuales">Manuales
+                                    del ITVER</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="https://bit.ly/3KVYAol">Reglamento de Estudiantes del TecNM</a></li>
                         </ul>
-                      </li>
+                    </li>
                 </ul>
             </div>
         </div>
