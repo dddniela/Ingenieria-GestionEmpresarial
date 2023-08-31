@@ -4,7 +4,7 @@ $administrativos = new Administrativo();
 $administrativos->setConnection($conn->getDB());
 
 $coordinador = $administrativos->getCoordinador();
-$jefeDepartamento =  $administrativos->getJefeDepartamento();
+$jefeDepartamento = $administrativos->getJefeDepartamento();
 ?>
 <!-- Portada -->
 <div class="row g-0">
@@ -14,7 +14,7 @@ $jefeDepartamento =  $administrativos->getJefeDepartamento();
       <div class="d-flex flex-column justify-content-center align-items-center text-center">
         <h1 class="fw-bold text-warning shadow-text">Conócenos</h1>
         <h1 class="fw-bold text-light d-md-flex d-none shadow-text">
-        Ingeniería en Gestión Empresarial
+          Ingeniería en Gestión Empresarial
         </h1>
       </div>
     </div>
@@ -27,8 +27,8 @@ $jefeDepartamento =  $administrativos->getJefeDepartamento();
 <section class="lightSection bg-light">
   <div class="row px-2 g-0">
 
-  <div class="col-lg-6 col-12 p-2 shadow-sm">
-    <div class="d-flex justify-content-center align-items-center w-100 h-100">
+    <div class="col-lg-6 col-12 p-2 shadow-sm">
+      <div class="d-flex justify-content-center align-items-center w-100 h-100">
         <img class="img-fluid rounded" src="img/admin_50.webp" alt="">
       </div>
     </div>
@@ -41,15 +41,21 @@ $jefeDepartamento =  $administrativos->getJefeDepartamento();
             <div class="sectionSeparator"></div>
           </div>
           <div class="col-12" style="text-align: center;">
-            <p style="text-align: justify;"> La carrera de Ingeniería en Gestión Empresarial pertenece al
-              departamento de ciencias económico-administrativas, el objetivo principal del
-              departamento es proporcionar a los estudiantes recursos y apoyo para el desarrollo 
-              de sus habilidades administrativas y el cumplimiento de los diferentes trámites necesarios
-              a lo largo de su plan de estudios. Esto incluye la gestión de prácticas profesionales, 
-              el seguimiento de créditos complementarios, el servicio social y las residencias profesionales. 
-              profesionales.
-              Además, el departamento brinda acceso a laboratorios de cómputo para que los estudiantes puedan 
-              aplicar herramientas tecnológicas en el ámbito administrativo.
+            <p style="text-align: justify;"> El Departamento de Ciencias Económico Administrativas ofrece tres programas
+              educativos: Licenciatura en Administración, Ingeniería en Gestión Empresarial y Maestría en
+              Administración. <br> <br>
+              Nuestro equipo se conforma por:
+              Jefatura de Departamento,
+              Auxiliar Administrativa/ Coordinación de Actividades Complementarias,
+              Jefatura de Proyecto Docente,
+              Jefatura de Proyecto de Vinculación,
+              Jefatura de Proyecto de Investigación,
+              Jefatura de Laboratorio,
+              Coordinación de Titulación <br><br>
+              El departamento académico cuenta con trece aulas asignadas al área, un laboratorio de “Simulación de
+              Negocios”, área de oficinas, cubículos para docentes, entre otras áreas de uso común a nivel
+              institucional.
+
             </p>
           </div>
         </div>
@@ -99,7 +105,8 @@ $jefeDepartamento =  $administrativos->getJefeDepartamento();
 
     <div class="col-lg-6 col-12 p-2 shadow-sm">
       <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <img class="img-fluid rounded" src='<?php if ($jefeDepartamento)  echo $jefeDepartamento->imagen; ?>' alt="">
+        <img class="img-fluid rounded" src='<?php if ($jefeDepartamento)
+          echo $jefeDepartamento->imagen; ?>' alt="">
       </div>
     </div>
 
@@ -114,7 +121,8 @@ $jefeDepartamento =  $administrativos->getJefeDepartamento();
 
     <div class="col-lg-6 col-12 p-2 shadow-sm">
       <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <img class="img-fluid rounded" src='<?php if ($coordinador) echo $coordinador->imagen; ?>' alt="">
+        <img class="img-fluid rounded" src='<?php if ($coordinador)
+          echo $coordinador->imagen; ?>' alt="">
       </div>
     </div>
 
@@ -179,57 +187,35 @@ $jefeDepartamento =  $administrativos->getJefeDepartamento();
             </h6>
 
             <p class="text-light" style="text-align: justify">
-              El departamento de ciencias económico-administrativas cuenta con su
-              laboratorio de equipo de cómputo en dónde los estudiantes podrán
-              desempañarse en desarrollar diversos programas, aplicaciones y
-              proyectos a lo largo de sus clases prácticas en la carrera de
-              licenciatura en administración. <br /><br />
-              Los laboratorios de cómputo están orientados a servir como
-              herramientas de aprendizaje y apoyo didáctico tanto para los
-              docentes como los alumnos.
+              El departamento de ciencias económico-administrativas ofrece a los
+              estudiantes un espacio para explorar y trabajar en una variedad de programas, aplicaciones
+              y proyectos durante sus actividades prácticas en la licenciatura en administración. <br /><br />
+              Estos espacios informáticos están diseñados para desempeñar un papel fundamental como recursos de
+              enseñanza y soporte educativo, beneficiando tanto a profesores como a estudiantes.
             </p>
-            <div class="justify-content-center text-center">
-              <p><a class="btn-warning w-auto btn font-bold" target="_blank" href="#">
-                Reglamento de Laboratorio</a></p>
-            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-lg-6 col-12 p-2 d-flex justify-content-center align-items-center">
-   <!-- Fin Instalaciones -->
+      <!-- Fin Instalaciones -->
 
       <!-- Galería con modal para laboratorios de cómputo -->
       <div class="contenedor-galeria bg-dark">
         <div class="row">
           <!-- <div class="col-lg-6"> -->
-            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage1">
-              <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_3878.webp" alt="" />
-            </a>
-           
-           <!-- <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage2">
-              <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_3878.webp" alt="" />
-            </a>
-          </div>
-
-          <div class="col-lg-6">
-            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage3">
-              <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_3878.webp" alt="" />
-            </a>
-            <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage4">
-              <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_3878.webp" alt="" />
-            </a>
-          </div>-->
+          <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage1">
+            <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_3878.webp" alt="" />
+          </a>
         </div>
       </div>
 
-     <!--  Fin Galería con modal para laboratorios de cómputo -->
+
     </div>
   </div>
 </section>
-
-<!--   Fin Galería con modal para laboratorios  -->
+<!--  Fin Galería con modal para laboratorios de cómputo -->
 
 <!-- Modals de la galería -->
 
@@ -242,100 +228,11 @@ $jefeDepartamento =  $administrativos->getJefeDepartamento();
   </div>
 </div>
 
-<!--   Moddal
-Imagen 2
-<div tabindex="-1" aria-labelledby="modalImage4" aria-hidden="true" class="modal fade" id="modalImage2">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content bg-transparent text-white text-center">
-      <img src="img/IMG_1110.webp" alt="" />
-    </div>
-  </div>
-</div>
 
-Imagen 3
-<div tabindex="-1" aria-labelledby="modalImage5" aria-hidden="true" class="modal fade" id="modalImage3">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content bg-transparent text-white text-center">
-      <img src="img/IMG_0555.jpg" alt="" />
-    </div>
-  </div>
-</div>
-
-Imagen 4
-<div tabindex="-1" aria-labelledby="modalImage6" aria-hidden="true" class="modal fade" id="modalImage4">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content bg-transparent text-white text-center">
-      <img src="img/IMG_0959.webp" alt="" />
-    </div>
-  </div>
-</div>
-Fin Modals de la galería-->
-
-<!-- Laboratorio de cómputo intensivo 
-<div class="bg-primary pt-5"></div>
-<section class="seccionInstalaciones bg-dark p-2">
-  <div class="row px-2 g-0">
-    <div class="col-lg-6 col-12 p-2 shadow-sm">
-      <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <img src="img/IMG_1713.webp" class="img-fluid rounded" alt="" />
-      </div>
-    </div>
-
-    <div class="col-lg-6 col-12 p-4">
-      <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <div class="row g-0">
-          <div class="col-12">
-            <h2 class="tituloSeccionOscura text-center font-bold m-3">
-              Laboratorio de Cómputo Intensivo
-            </h2>
-            <div class="separadorSeccionOscura"></div>
-            <h4 class="text-center text-light fw-bold fs-3">
-              Responsable: Abelardo Rodríguez León
-            </h4>
-          </div>
-          <div class="col-12">
-            <p class="text-light" style="text-align: justify">
-              Adicionalmente a las oficinas administrativas y laboratorios de
-              cómputo, la carrera de ingeniería en sistemas computacionales
-              cuenta con el apoyo de un laboratorio de servidores en dónde el
-              alumnado tendrá la oportunidad de interactuar con clústeres con
-              diferentes enfoques tecnológicos.
-            </p>
-          </div>
-          <div class="col-12">
-            <div class="bg-dark">
-                <ul class="m-3 text-warning font-bold" style="text-align: justify">
-                <li>Agave: Clúster de alto procesamiento.</li>
-                <li>Peyote: Clúster de visualización en 4K.</li>
-                <li>Saguar: Clúster de servicios de virtualización.</li>
-                <li>Nopal: Clúster de alto rendimiento.</li>
-                </ul>
-                </div>
-          </div>
-          <div class="col-12">
-            <p class="text-light" style="text-align: justify">
-              El Dr. Abelardo Rodríguez León (responsable del laboratorio de
-              servidores) pone a disposición el equipo a aquellos alumnos que
-              deseen realizar proyectos, experimentos, investigaciones, realizar
-              servicio social o residencias profesionales dentro del
-              laboratorio.
-
-              <br />
-              <br />
-              Información de contacto: abelardo.rl@veracruz.tecnm.mx
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- Fin Laboratorio de cómputo intensivo -->
- 
 <div class="bg-primary pt-5"></div>
 <div class="p-4 text-center">
   <h5 class="font-bold">Autores de la página:</h5>
-    <p class="font-semibold">Estudiantes de la Generación 2018 - 2023</p>
-    <p> Nancy Daniela Mendez Arpidez, Daniela Castro Rodriguez, Yelitza Magali Rosas Jiménez, 
-      Marco Gabriel Cortés Toledo, Gabriel Escobar Medina </p>
+  <p class="font-semibold">Estudiantes de la Generación 2018 - 2023</p>
+  <p> Nancy Daniela Mendez Arpidez, Daniela Castro Rodriguez, Yelitza Magali Rosas Jiménez,
+    Marco Gabriel Cortés Toledo, Gabriel Escobar Medina </p>
 </div>

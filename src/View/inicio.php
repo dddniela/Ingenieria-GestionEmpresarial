@@ -37,8 +37,9 @@
         <div class="container">
           <div class="carousel-caption">
             <h1 class="mainTitle text-center font-bold m-2 shadow-text">Ingeniería en Gestión Empresarial</h1>
-            <h2 class="mainSubtitle text-center font-bold d-none d-md-inline-flex shadow-text">Colabora con la comunidad</h1>
-            <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=5">Explorar</a></p>
+            <h2 class="mainSubtitle text-center font-bold d-none d-md-inline-flex shadow-text">Conoce a tus docentes
+              </h1>
+              <p><a class="mainButton btn font-bold d-none d-md-inline-flex" href="?option=2">Explorar</a></p>
           </div>
         </div>
       </div>
@@ -61,7 +62,7 @@
   <div class="row px-2 g-0">
     <div class="col-lg-6 col-12 p-2 shadow-sm">
       <div class="d-flex justify-content-center align-items-center w-100 h-100">
-        <img class="img-fluid rounded" src="img/IMG_ECO2341.png" alt="">
+        <img class="img-fluid rounded" src="img/ECO_632.png" alt="">
       </div>
     </div>
 
@@ -73,9 +74,11 @@
             <div class="sectionSeparator"></div>
           </div>
           <div class="col-12" style="text-align: center;">
-            <p style="text-align: justify;"> La carrera de Ingeniería en Gestión Empresarial brinda al estudiante una visión estratégica para identificar oportunidades de 
-            mejora y desarrollo en una organización. Podrás analizar el entorno empresarial, tomar decisiones basadas en datos y diseñar planes estratégicos
-            que impulsen el crecimiento y la competitividad empresarial.
+            <p style="text-align: justify;"> La carrera de Ingeniería en Gestión Empresarial brinda al estudiante una
+              visión estratégica para identificar oportunidades de
+              mejora y desarrollo en una organización. Podrás analizar el entorno empresarial, tomar decisiones basadas
+              en datos y diseñar planes estratégicos
+              que impulsen el crecimiento y la competitividad empresarial.
             </p>
             <a class="btn btn-warning font-bold" href="?option=3" role="button">¡Saber más!</a>
           </div>
@@ -172,10 +175,12 @@
           <div class="col-12 px-4" style="text-align: center;">
             <p class="text-light" style="text-align: justify;">
 
-              El departamento de ciencias económico-administrativas colabora estrechamente con el cuerpo docente de la carrera de licenciatura en administración e 
-              ingeniería en gestión empresarial para asegurar que se cumplan con los objetivos de aprendizaje establecidos en el plan de estudios.  <br> <br>
-              También se encarga de recopilar datos y realizar seguimiento del desempeño de los estudiantes en las clases prácticas, 
-              se encarga de gestionar y coordinar, asegurando un entorno propicio para el desarrollo de programas, aplicaciones y proyectos por parte de los estudiantes.
+              El Departamento de Ciencias Económico Administrativas ofrece tres programas educativos: Licenciatura en
+              Administración, Ingeniería en Gestión Empresarial y Maestría en Administración.
+              <br> <br>
+              El departamento académico cuenta con trece aulas asignadas al área, un laboratorio de “Simulación de
+              Negocios”, área de oficinas, cubículos para docentes, entre otras áreas de uso común a nivel
+              institucional.
 
             </p>
             <a class="btn btn-warning font-bold" href="?option=4" role="button">¡Explorar!</a>
@@ -202,23 +207,21 @@
       <div class="galleryContainer bg-light">
         <div class="row g-0">
           <div class="col-4 px-2">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/juliaRiveraMoreno.png"
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/juliaRiveraMoreno.png" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/mariaEugeniaPalenciaCastillo.png"
               alt="">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2"
-              src="img/Docentes/mariaEugeniaPalenciaCastillo.png" alt="">
           </div>
 
           <div class="col-4 px-2">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/claudiaAlejandraRamirezDelgado.png"
-              alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2"
+              src="img/Docentes/claudiaAlejandraRamirezDelgado.png" alt="">
             <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/rosarioPerezJimenez.png" alt="">
           </div>
 
           <div class="col-4 px-2">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/cutbertoMaciasMora.png"
-              alt="">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/perfectoGabrielTrujilloCastro.png"
-              alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/cutbertoMaciasMora.png" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2"
+              src="img/Docentes/perfectoGabrielTrujilloCastro.png" alt="">
           </div>
 
         </div>
@@ -234,8 +237,10 @@
           </div>
           <div class="col-12" style="text-align: center;">
             <p style="text-align: justify;"> Nuestros profesores son impulsores de cambio, son el elemento esencial de
-              nuestra institución, contamos con profesores y profesoras de diversas disciplinas, quienes demuestran diariamente 
-              su compromiso más allá de las aulas. Son profesionales que tienen la facultad de transformar vidas, de impactar a 
+              nuestra institución, contamos con profesores y profesoras de diversas disciplinas, quienes demuestran
+              diariamente
+              su compromiso más allá de las aulas. Son profesionales que tienen la facultad de transformar vidas, de
+              impactar a
               las futuras generaciones de estudiantes.
             </p>
             <a class="btn btn-warning font-bold" href="?option=2" role="button">¡Conocer docentes!</a>
@@ -257,7 +262,7 @@
 
     <div class="col-5 text-center p-5">
       <div class="area shadow-sm p-4 rounded-3">
-        <a href="http://gestion.itver.edu.mx/servicio-social/" target="_blank" >
+        <a href="http://gestion.itver.edu.mx/servicio-social/" target="_blank">
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4 p-1" src="img/gestionVinculacion.webp" alt="">
         </a>
         <h3 class="areaTitle text-center font-bold text-xl">Servicio social</h3>
@@ -266,27 +271,18 @@
 
     <div class="col-5 text-center p-5">
       <div class="area shadow-sm p-4 rounded-3">
-        <a href="http://www.veracruz.tecnm.mx/" target="_blank" >
+        <a href="http://www.veracruz.tecnm.mx/" target="_blank">
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4  p-1" src="img/ITVER-9.webp" alt="">
         </a>
         <h3 class="areaTitle text-center font-bold text-xl">TECNM Veracruz</h3>
       </div>
     </div>
-<!-- 
-    <div class="col-lg-4 col-sm-6 text-center p-3">
-      <div class="area shadow-sm p-4 rounded-3">
-        <a href="?option=5">
-          <img class="img-fluid w-90 shadow-1-strong rounded mb-4  p-1" src="img/Itver Admon-5.jpg" alt="">
-        </a>
-        <h3 class="areaTitle text-center font-bold text-xl">Comunidades</h3>
-      </div>
-    </div> -->
 
   </div>
 </section>
 <!-- Fin Enlaces ->
 
-<!-- Área de redes sociales -->
+<!- Área de redes sociales -->
 <section class="lightSection p-2 g-0">
   <div class="row g-0">
     <div class="col">
@@ -304,8 +300,8 @@
       <div class="d-flex flex-row justify-content-center">
         <a class="mx-2" href="https://www.tecnm.mx/" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-column justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px"
-              src="img/iconos/tecnm-logo.PNG" alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/tecnm-logo.PNG"
+              alt="">
           </div>
         </a>
         <a class="mx-2" href="https://www.facebook.com/TecNMmx" target="_blank" style="text-decoration: none;">
@@ -333,8 +329,8 @@
       <div class="d-flex flex-row justify-content-center">
         <a class="mx-2" href="https://www.veracruz.tecnm.mx/index.php" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px"
-              src="img/iconos/itver-logo.PNG" alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/itver-logo.PNG"
+              alt="">
           </div>
         </a>
         <a class="mx-2" href="https://www.facebook.com/ITVeracruz" target="_blank" style="text-decoration: none;">
@@ -359,24 +355,24 @@
       </div>
     </div>
   </div>
-  <!-- <div class="row g-0">
-    <h4 class="sectionTitle  text-center font-bold">Departamento Económico - Administrativo</h4>
+
+  <div class="row g-0">
+    <h4 class="sectionTitle  text-center font-bold">Departamento Ciencias Económico Administrativas</h4>
     <div class="d-flex flex-row justify-content-center">
-      <a class="mx-2" href="https://www.facebook.com/profile.php?id=100065327956621" target="_blank"
-        style="text-decoration: none;">
+      <a class="mx-2" href="https://www.facebook.com/residenciasadmin/" target="_blank" style="text-decoration: none;">
         <div class="d-flex flex-row justify-content-center">
           <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="width: 40px" src="img/iconos/facebook.PNG"
             alt="">
         </div>
       </a>
-      <a class="mx-2" href="https://www.youtube.com/channel/UCYSUOZ6V9YRGviVvwaXOcjw" target="_blank"
-          style="text-decoration: none;">
-          <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/youtube.PNG"
-              alt="">
-          </div>
-        </a>
-    </div> -->
+      <a class="mx-2" href="https://www.youtube.com/@DepartamentoCienciasEcon-tecnm" target="_blank"
+        style="text-decoration: none;">
+        <div class="d-flex flex-row justify-content-center">
+          <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/youtube.PNG"
+            alt="">
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 <!-- Fin Área de redes sociales -->

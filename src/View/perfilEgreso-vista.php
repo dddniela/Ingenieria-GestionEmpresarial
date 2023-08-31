@@ -44,26 +44,6 @@ $objetivo = $seccion->getObjetivo();
                 </div>
             </div>
         </div>
-<!--
-        <div class="lightSection col-lg-6 col-12 p-4">
-            <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <h2 class="sectionTitle text-center font-bold m-3">Objetivo general</h2>
-                        <div class="sectionSeparator"></div>
-                    </div>
-                    <div class="col-12" style="text-align: center;">
-                        <p style="text-align: justify;"> 
-                        Formar profesionales que contribuyan a la gestión de empresas e innovación de procesos; así como al
-                        diseño, implementación y desarrollo de sistemas estratégicos de negocios, optimizando recursos en un
-                        entorno global, con ética y responsabilidad social. 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 
         <div class="lightSection col-lg-6 col-12 p-4">
             <div class="d-flex justify-content-center align-items-center w-100 h-100">

@@ -184,6 +184,8 @@
                                     del ITVER</a></li>
                             <li><a class="dropdown-item hover-blue" target="_blank"
                                     href="https://bit.ly/3KVYAol">Reglamento de Estudiantes del TecNM</a></li>
+                            <li><a class="dropdown-item hover-blue" target="_blank"
+                                    href="https://bit.ly/45uRxKV">Actividades complementarias</a></li>
                         </ul>
                     </li>
                 </ul>
