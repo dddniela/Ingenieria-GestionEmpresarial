@@ -205,12 +205,11 @@ $jefeDepartamento = $administrativos->getJefeDepartamento();
       <div class="contenedor-galeria bg-dark">
         <div class="row">
           <!-- <div class="col-lg-6"> -->
-          <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage1">
+          
             <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_3878.webp" alt="" />
-          </a>
+          
         </div>
       </div>
-
 
     </div>
   </div>
