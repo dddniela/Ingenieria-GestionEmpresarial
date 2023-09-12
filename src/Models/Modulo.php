@@ -5,7 +5,7 @@ require_once "Conexion.php";
 class Especialidad
 {
     private $especialidadId;
-    private $carreraId;
+    private $programaId;
     private $nombre;
     private $status;
     private $connection;
@@ -18,7 +18,7 @@ class Especialidad
     public function getEspecialidades()
     {
         $cn = $this->connection;
-        $sqlQ = "SELECT * FROM tbl_especialidad WHERE carreraId=" . $GLOBALS['carreraID'] . " AND status = 1;";
+        $sqlQ = "SELECT * FROM tbl_especialidad WHERE programaId=" . $GLOBALS['programaId'] . " AND status = 1;";
         $data = $cn->query($sqlQ);
         return $data;
     }

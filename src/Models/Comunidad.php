@@ -5,7 +5,7 @@ require_once "Conexion.php";
 class Comunidad
 {
     private $comunidadId;
-    private $carreraId;
+    private $programaId;
     private $nombre;
     private $logo;
     private $quienesSomos;
@@ -71,7 +71,7 @@ class Comunidad
     public function getComunidades()
     {
         $cn = $this->connection;
-        $sql = 'SELECT * FROM tbl_comunidad WHERE carreraId=' . $GLOBALS['carreraID'] . ' AND status = 1 ORDER BY nombre ASC';
+        $sql = 'SELECT * FROM tbl_comunidad WHERE programaId=' . $GLOBALS['programaId'] . ' AND status = 1 ORDER BY nombre ASC';
         $comunidades = mysqli_query($this->connection, $sql);
         return $comunidades;
     }

@@ -2,7 +2,7 @@
     define("host", "localhost");
     define("user", "root");
     define("pass", "");
-    define("nameDB", "dashboardCarreras");
+    define("nameDB", "programasestudioitver");
     define("port", 3306);
 
     class Conexion

@@ -5,7 +5,7 @@ require_once "Conexion.php";
 class Seccion
 {
     private $especialidadId;
-    private $carreraId;
+    private $programaId;
     private $nombre;
     private $status;
     private $connection;
@@ -18,7 +18,7 @@ class Seccion
     public function getObjetivo()
     {
         $cn = $this->connection;
-        $sql = "SELECT titulo, descripcion FROM tbl_seccion WHERE carreraId = " . $GLOBALS['carreraID'] . "
+        $sql = "SELECT titulo, descripcion FROM tbl_seccion WHERE programaId = " . $GLOBALS['programaId'] . "
         AND moduloId = 2 AND titulo = 'Objetivo general' AND status = 1;";
         $objetivo = mysqli_query($this->connection, $sql);
         $objetivo = $objetivo->fetch_object();
@@ -29,13 +29,13 @@ class Seccion
     {
         $cn = $this->connection;
         $sql = "SELECT tbl_seccion.titulo, tbl_objeto.posicion, tbl_objeto.descripcion, tbl_objeto.imagen
-        FROM tbl_seccion INNER JOIN tbl_carrera ON
-        tbl_seccion.carreraId = tbl_carrera.carreraId
+        FROM tbl_seccion INNER JOIN tbl_programa_estudio ON
+        tbl_seccion.programaId = tbl_programa_estudio.programaId
         INNER JOIN tbl_objeto ON  tbl_objeto.seccionId = tbl_seccion.seccionId
         AND tbl_objeto.status = 1
         AND tbl_seccion.moduloId = 2
         AND tbl_seccion.titulo = 'Perfil de egreso'
-        AND tbl_seccion.carreraId = " . $GLOBALS['carreraID'] . " ORDER BY tbl_objeto.posicion ASC;";
+        AND tbl_seccion.programaId = " . $GLOBALS['programaId'] . " ORDER BY tbl_objeto.posicion ASC;";
         $objetivo = mysqli_query($this->connection, $sql);
         return $objetivo;
     }
@@ -44,13 +44,13 @@ class Seccion
     {
         $cn = $this->connection;
         $sql = "SELECT tbl_seccion.titulo, tbl_objeto.posicion, tbl_objeto.descripcion, tbl_objeto.imagen
-        FROM tbl_seccion INNER JOIN tbl_carrera ON
-        tbl_seccion.carreraId = tbl_carrera.carreraId
+        FROM tbl_seccion INNER JOIN tbl_programa_estudio ON
+        tbl_seccion.programaId = tbl_programa_estudio.programaId
         INNER JOIN tbl_objeto ON  tbl_objeto.seccionId = tbl_seccion.seccionId
         AND tbl_objeto.status = 1
         AND tbl_seccion.moduloId = 2
         AND tbl_seccion.titulo = 'Objetivos educacionales'
-        AND tbl_seccion.carreraId = " . $GLOBALS['carreraID'] . " ORDER BY tbl_objeto.posicion ASC;";
+        AND tbl_seccion.programaId = " . $GLOBALS['programaId'] . " ORDER BY tbl_objeto.posicion ASC;";
         $objetivo = mysqli_query($this->connection, $sql);
         return $objetivo;
     }

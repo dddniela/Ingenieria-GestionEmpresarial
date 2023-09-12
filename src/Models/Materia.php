@@ -5,7 +5,7 @@ require_once "Conexion.php";
 class Materia
 {
     private $materiaId;
-    private $carreraId;
+    private $programaId;
     private $especialidadId;
     private $nombre;
     private $area;
@@ -113,7 +113,7 @@ class Materia
     function imprimir($NumeroSemestre)
     {
         $cn = $this->connection;
-        $sqlQ = "SELECT * FROM tbl_materia WHERE semestre=$NumeroSemestre AND especialidadId IS NULL AND carreraId=" . $GLOBALS['carreraID'] . ";";
+        $sqlQ = "SELECT * FROM tbl_materia WHERE semestre=$NumeroSemestre AND especialidadId IS NULL AND programaId=" . $GLOBALS['programaId'] . ";";
         $ResultSet = $cn->query($sqlQ);
 
         $tabla = "";
