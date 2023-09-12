@@ -68,10 +68,10 @@ INSERT INTO `tbl_administrativo` (`administrativoId`, `puestoId`, `nombre`, `des
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_administrativo_carrera`
+-- Estructura de tabla para la tabla `tbl_administrativo_programa`
 --
 
-CREATE TABLE `tbl_administrativo_carrera` (
+CREATE TABLE `tbl_administrativo_programa` (
   `adminCarreraId` int(11) NOT NULL,
   `administrativoId` int(11) NOT NULL,
   `carreraId` int(11) NOT NULL,
@@ -83,10 +83,10 @@ CREATE TABLE `tbl_administrativo_carrera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `tbl_administrativo_carrera`
+-- Volcado de datos para la tabla `tbl_administrativo_programa`
 --
 
-INSERT INTO `tbl_administrativo_carrera` (`adminCarreraId`, `administrativoId`, `carreraId`, `status`, `createdBy`, `createdAt`, `updatedBy`, `updatedAt`) VALUES
+INSERT INTO `tbl_administrativo_programa` (`adminCarreraId`, `administrativoId`, `carreraId`, `status`, `createdBy`, `createdAt`, `updatedBy`, `updatedAt`) VALUES
 (1, 1, 11, 1, NULL, NULL, NULL, NULL),
 (2, 2, 11, 1, NULL, NULL, NULL, NULL),
 (3, 3, 2, 1, NULL, '2023-06-20', NULL, '2023-06-20'),
@@ -1825,9 +1825,9 @@ ALTER TABLE `tbl_administrativo`
   ADD KEY `fk_tbl_administrativo_puestoId` (`puestoId`);
 
 --
--- Indices de la tabla `tbl_administrativo_carrera`
+-- Indices de la tabla `tbl_administrativo_programa`
 --
-ALTER TABLE `tbl_administrativo_carrera`
+ALTER TABLE `tbl_administrativo_programa`
   ADD PRIMARY KEY (`adminCarreraId`),
   ADD UNIQUE KEY `adminCarreraId_UNIQUE` (`adminCarreraId`),
   ADD KEY `fk_tbl_administrativo_carrera_administrativoId` (`administrativoId`),
@@ -1963,9 +1963,9 @@ ALTER TABLE `tbl_administrativo`
   MODIFY `administrativoId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT de la tabla `tbl_administrativo_carrera`
+-- AUTO_INCREMENT de la tabla `tbl_administrativo_programa`
 --
-ALTER TABLE `tbl_administrativo_carrera`
+ALTER TABLE `tbl_administrativo_programa`
   MODIFY `adminCarreraId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
@@ -2069,9 +2069,9 @@ ALTER TABLE `tbl_administrativo`
   ADD CONSTRAINT `fk_tbl_administrativo_puestoId` FOREIGN KEY (`puestoId`) REFERENCES `tbl_puesto_administrativo` (`puestoId`);
 
 --
--- Filtros para la tabla `tbl_administrativo_carrera`
+-- Filtros para la tabla `tbl_administrativo_programa`
 --
-ALTER TABLE `tbl_administrativo_carrera`
+ALTER TABLE `tbl_administrativo_programa`
   ADD CONSTRAINT `fk_tbl_administrativo_carrera_administrativoId` FOREIGN KEY (`administrativoId`) REFERENCES `tbl_administrativo` (`administrativoId`),
   ADD CONSTRAINT `fk_tbl_administrativo_carrera_carreraId` FOREIGN KEY (`carreraId`) REFERENCES `tbl_carrera` (`carreraId`);
 
