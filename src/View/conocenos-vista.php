@@ -175,13 +175,12 @@ $jefeDepartamento = $administrativos->getJefeDepartamento();
             </h2>
             <div class="separadorSeccionOscura"></div>
             <h4 class="text-center text-light fw-bold fs-3">
-              Laboratorio de Negocios
+              Laboratorio Simulación de Negocios
             </h4>
           </div>
           <div class="col-12">
             <h6 class="text-center text-warning fw-bold fs-6">
-              “El verdadero progreso es el que pone la tecnología al alcance de
-              todos.”<br />
+              “Aprendizaje en nuestro laboratorio informático.”<br />
             </h6>
 
             <p class="text-light" style="text-align: justify">
@@ -204,7 +203,7 @@ $jefeDepartamento = $administrativos->getJefeDepartamento();
         <div class="row">
           <!-- <div class="col-lg-6"> -->
           
-            <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_3878.webp" alt="" />
+            <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/laboratorio/IMG_1521.jpg" alt="" />
           
         </div>
       </div>

@@ -117,7 +117,7 @@ $objetivo = $seccion->getObjetivo();
 
                     <div class="col-md-4 px-2">
                         <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage4">
-                            <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/ITVER.webp" alt="">
+                            <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/laboratorio/IMG_1325.jpg" alt="">
                         </a>
                         <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage5">
                             <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_ECO32.webp" alt="">
@@ -196,8 +196,8 @@ $objetivo = $seccion->getObjetivo();
 <div tabindex="-1" aria-labelledby="modalImage4" aria-hidden="true" class="modal fade" id="modalImage4">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content bg-transparent text-white text-center">
-            <img src="img/ITVER.webp" alt="">
-            <p>Letras del Instituto Tecnológico de Veracruz</p>
+            <img src="img/laboratorio/IMG_1325.jpg" alt="">
+            <p>Laboratorio Simulación de Negocios</p>
         </div>
     </div>
 </div>
