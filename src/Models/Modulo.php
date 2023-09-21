@@ -23,25 +23,7 @@ class Especialidad
         return $data;
     }
 
-    function icono($Area)
-    {
-        $ruta_img = "";
-        switch ($Area) {
-            case 'Sistemas Concurrentes':
-                $ruta_img = 'img/iconos/concurrentes.PNG';
-                break;
-            case 'Distribuidas':
-                $ruta_img = 'img/iconos/distribuidas.PNG';
-                break;
-            case 'Transacciones':
-                $ruta_img = 'img/iconos/blockchain.PNG';
-                break;
-            default:
-                $ruta_img = 'img/iconos/programacion.PNG';
-                break;
-        }
-        return $ruta_img;
-    }
+    
 
     function imprimirNavPills()
     {

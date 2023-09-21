@@ -4,6 +4,7 @@ $seccion = new Seccion();
 $seccion->setConnection($conn->getDB());
 
 $objetivo = $seccion->getObjetivo();
+
 ?>
 <!-- Portada -->
 <div class="row g-0">
@@ -70,6 +71,56 @@ $objetivo = $seccion->getObjetivo();
 </section>
 <!--Fin Objetivo general -->
 
+<!-- Perfil de ingreso 
+<div class="informationContainer">
+    <div class="row g-0 align-items-center">
+        <div class="col-lg-12">
+
+             Puntos del perfil de ingreso 
+
+            <section class="lightSection bg-light p-2">
+                <h2 class="sectionTitle text-center font-bold m-3">Perfil de Ingreso</h2>
+                <div class="sectionSeparator"></div>
+
+                <div class="row g-0">
+                    <?php
+                    echo $seccion->imprimirPerfilIngreso();
+                    ?>
+                </div>
+            </section>
+
+            Fin Puntos del perfil de ingreso 
+
+        </div>
+    </div>
+</div>
+ Fin perfil de ingreso -->
+
+<!-- perfil de ingreso temporal -->
+<section class="lightSection bg-light">
+    <div class="row px-2 g-0">
+        <div class="col-lg-12 col-6 p-4">
+            <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                <div class="row g-0">
+                    <h2 class="sectionTitle text-center font-bold m-3">
+                        Perfil de ingreso
+                    </h2>
+                    <div class="sectionSeparator"></div>
+                    <div class="col-12 px-4">
+                        <p class="text-dark" style="text-align: justify;">
+                            Las personas que deseen matricularse en Ingeniería en Gestión Empresarial deben haber
+                            cursado preferentemente bachillerato en Ciencias Económicas Administrativas, Ciencias
+                            Exactas o equivalente, poseer cualidades innovadoras, enfocarse en los problemas prácticos
+                            que enfrenta la nación, demostrar visión de crecimiento y sostenibilidad a través de
+                            proyectos y exhibir conciencia ambiental. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fin perfil de ingreso -->
+
 <!-- Perfil de egreso -->
 <div class="informationContainer">
     <div class="row g-0 align-items-center">
@@ -117,7 +168,8 @@ $objetivo = $seccion->getObjetivo();
 
                     <div class="col-md-4 px-2">
                         <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage4">
-                            <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/laboratorio/IMG_1325.jpg" alt="">
+                            <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/laboratorio/IMG_1325.jpg"
+                                alt="">
                         </a>
                         <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage5">
                             <img class="img-fluid w-100 shadow-1-strong rounded mb-4" src="img/IMG_ECO32.webp" alt="">

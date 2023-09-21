@@ -40,6 +40,21 @@ class Seccion
         return $objetivo;
     }
 
+    public function getPerfilIngreso()
+    {
+        $cn = $this->connection;
+        $sql = "SELECT tbl_seccion.titulo, tbl_objeto.posicion, tbl_objeto.descripcion, tbl_objeto.imagen
+        FROM tbl_seccion INNER JOIN tbl_programa_estudio ON
+        tbl_seccion.programaId = tbl_programa_estudio.programaId
+        INNER JOIN tbl_objeto ON  tbl_objeto.seccionId = tbl_seccion.seccionId
+        AND tbl_objeto.status = 1
+        AND tbl_seccion.moduloId = 2
+        AND tbl_seccion.titulo = 'Perfil de Ingreso'
+        AND tbl_seccion.programaId = " . $GLOBALS['programaId'] . " ORDER BY tbl_objeto.posicion ASC;";
+        $objetivo = mysqli_query($this->connection, $sql);
+        return $objetivo;
+    }
+
     public function getObjetivoEducacional()
     {
         $cn = $this->connection;
@@ -58,6 +73,26 @@ class Seccion
     public function imprimirPerfilEgreso()
     {
         $resultSet = $this->getPerfilEgreso();
+        $tabla = "";
+
+        if ($resultSet->num_rows > 0) {
+            while ($row = $resultSet->fetch_assoc()) {
+                $descripcion = $row['descripcion'];
+                $imagen = $row['imagen'];
+                $tabla .=  "<div class='col-lg-4 col-sm-6 text-center p-3'>
+                                <div class='area shadow-sm p-4'>
+                                    <img class='imagenArea items-center' src='$imagen' alt=''>
+                                    <p class='textoArea'>$descripcion</p>
+                                </div>
+                            </div>";
+            }
+        }
+        return $tabla;
+    }
+
+    public function imprimirPerfilIngreso()
+    {
+        $resultSet = $this->getPerfilIngreso();
         $tabla = "";
 
         if ($resultSet->num_rows > 0) {
