@@ -29,7 +29,7 @@ class Materia
                 $ruta_img = 'img/iconos/calculo.png';
                 break;
             case 'Asignaturas Comunes':
-                $ruta_img = 'img/iconos/asignaturas-comunes.PNG';
+                $ruta_img = 'img/iconos/asignaturas-comunes.png';
                 break;
             case 'Quimica':
                 $ruta_img = 'img/iconos/quimica.png';
@@ -104,7 +104,7 @@ class Materia
                 $ruta_img = 'img/iconos/mercElectronica.png';
                 break;
             default:
-                $ruta_img = 'img/extraescolares/circuloDeLectura.PNG';
+                $ruta_img = 'img/iconos/asignaturas-comunes.png';
                 break;
         }
         return $ruta_img;
