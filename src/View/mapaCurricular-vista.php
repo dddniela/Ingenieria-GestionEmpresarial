@@ -232,8 +232,7 @@
                                 profesional de los estudiantes de las instituciones adscritas al Tecnológico Nacional de
                                 México.
                             </p>
-                            <h5 class="font-bold text-warning" style="text-align: justify">Especialidades que han
-                                existido:</h5>
+                            <h5 class="font-bold text-warning" style="text-align: justify">Especialidades vigentes:</h5>
                             <div class="bg-dark">
                                 <ul class="m-3 text-light font-bold" style="text-align: justify">
                                     <?php
