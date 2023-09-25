@@ -4,6 +4,7 @@ $seccion = new Seccion();
 $seccion->setConnection($conn->getDB());
 
 $objetivo = $seccion->getObjetivo();
+$ingreso = $seccion->getPerfilIng();
 
 ?>
 <!-- Portada -->
@@ -71,54 +72,38 @@ $objetivo = $seccion->getObjetivo();
 </section>
 <!--Fin Objetivo general -->
 
-<!-- Perfil de ingreso 
-<div class="informationContainer">
-    <div class="row g-0 align-items-center">
-        <div class="col-lg-12">
+<!-- Perfil de ingreso -->
+<section class="lightSection bg-light p-2">
+    <div class="row px-2 g-0">
+        <div class="col-lg-6 col-12 p-2 shadow-sm">
+            <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                <img class="img-fluid rounded" src="img/IMG_596.png" alt="">
+            </div>
+        </div>
 
-             Puntos del perfil de ingreso 
-
-            <section class="lightSection bg-light p-2">
-                <h2 class="sectionTitle text-center font-bold m-3">Perfil de Ingreso</h2>
-                <div class="sectionSeparator"></div>
-
+        <div class="lightSection col-lg-6 col-12 p-4">
+            <div class="d-flex justify-content-center align-items-center w-100 h-100">
                 <div class="row g-0">
-                    <?php
-                    echo $seccion->imprimirPerfilIngreso();
-                    ?>
+                    <div class="col-12">
+                        <h2 class="sectionTitle text-center font-bold m-3">
+                            Perfil de ingreso
+                        </h2>
+                        <div class="sectionSeparator"></div>
+                    </div>
+                    <div class="col-12" style="text-align: center;">
+                        <p style="text-align: justify;">
+                            <?php
+                            if ($ingreso) {
+                                echo $ingreso->descripcion;
+                            }
+                            ?>
+                        </p>
+                    </div>
                 </div>
-            </section>
-
-            Fin Puntos del perfil de ingreso 
-
+            </div>
         </div>
     </div>
-</div>
- Fin perfil de ingreso -->
-
-<!-- perfil de ingreso temporal -->
-<div class="informationContainer">
-    <div class="row g-0 align-items-center">
-        <div class="col-lg-12 col-sm-12">
-            <!--  -->
-            <section class="lightSection bg-light p-2">
-                <h2 class="sectionTitle text-center font-bold m-3">Perfil de ingreso</h2>
-                <div class="sectionSeparator"></div>
-
-                <div class="row g-0 col-12 px-4">
-                    <p class="text-dark" style="text-align: justify;">
-                        Las personas que deseen matricularse en Ingeniería en Gestión Empresarial deben haber
-                        cursado preferentemente bachillerato en Ciencias Económicas Administrativas, Ciencias
-                        Exactas o equivalente, poseer cualidades innovadoras, enfocarse en los problemas prácticos
-                        que enfrenta la nación, demostrar visión de crecimiento y sostenibilidad a través de
-                        proyectos y exhibir conciencia ambiental.
-                    </p>
-                </div>
-            </section>
-
-        </div>
-    </div>
-</div>
+</section>
 <!-- Fin perfil de ingreso -->
 
 <!-- Perfil de egreso -->

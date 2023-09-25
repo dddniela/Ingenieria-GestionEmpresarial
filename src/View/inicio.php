@@ -353,24 +353,5 @@
       </div>
     </div>
   </div>
-
-  <div class="row g-0">
-    <h4 class="sectionTitle  text-center font-bold">Departamento Ciencias Económico Administrativas</h4>
-    <div class="d-flex flex-row justify-content-center">
-      <a class="mx-2" href="https://www.facebook.com/residenciasadmin/" target="_blank" style="text-decoration: none;">
-        <div class="d-flex flex-row justify-content-center">
-          <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="width: 40px" src="img/iconos/facebook.PNG"
-            alt="">
-        </div>
-      </a>
-      <a class="mx-2" href="https://www.youtube.com/@DepartamentoCienciasEcon-tecnm" target="_blank"
-        style="text-decoration: none;">
-        <div class="d-flex flex-row justify-content-center">
-          <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/youtube.PNG"
-            alt="">
-        </div>
-      </a>
-    </div>
-  </div>
 </section>
 <!-- Fin Área de redes sociales -->

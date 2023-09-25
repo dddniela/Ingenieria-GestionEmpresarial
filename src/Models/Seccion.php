@@ -25,6 +25,16 @@ class Seccion
         return $objetivo;
     }
 
+    public function getPerfilIng()
+    {
+        $cn = $this->connection;
+        $sql = "SELECT titulo, descripcion FROM tbl_seccion WHERE programaId = " . $GLOBALS['programaId'] . "
+        AND moduloId = 2 AND titulo = 'Perfil de Ingreso' AND status = 1;";
+        $objetivo = mysqli_query($this->connection, $sql);
+        $objetivo = $objetivo->fetch_object();
+        return $objetivo;
+    }
+
     public function getPerfilEgreso()
     {
         $cn = $this->connection;
