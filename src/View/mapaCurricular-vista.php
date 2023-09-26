@@ -279,7 +279,6 @@
             ?>
         </div>
     </div>
-
 </div>
 <!-- Fin Especialidad -->
 
@@ -325,7 +324,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <!--Fin Desarrollo profesional -->
@@ -573,7 +571,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <!--Fin Tutorías -->
