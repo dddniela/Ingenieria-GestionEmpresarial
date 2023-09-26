@@ -127,7 +127,7 @@ $ingreso = $seccion->getPerfilIng();
     </div>
 </div>
 <!-- Fin Perfil de egreso-->
-
+<!-- nancy daniela mendez arpidez -->
 <!-- Galeria de imagenes -->
 <section class="darkSection bg-dark p-2 px-4">
     <div class="row mb-4 px-2 g-0">
@@ -200,7 +200,6 @@ $ingreso = $seccion->getPerfilIng();
     </div>
 </section>
 <!-- Fin Galeria de imagenes -->
-
 
 <!-- Modals de la galería-->
 <div tabindex="-1" aria-labelledby="modalImage1" aria-hidden="true" class="modal fade" id="modalImage1">
