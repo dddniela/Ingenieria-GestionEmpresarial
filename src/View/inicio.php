@@ -256,20 +256,23 @@
   <h2 class="sectionTitle text-center font-bold m-3">Enlaces</h2>
   <div class="sectionSeparator"></div>
 
+  <!-- Row que contiene los enlaces -->
   <div class="row g-0 justify-content-center">
 
-    <div class="col-5 text-center p-5">
+   <!-- Primer enlace -->
+    <div class="col-lg-4 col-sm-6 text-center p-3">
       <div class="area shadow-sm p-4 rounded-3">
-        <a href="http://gestion.itver.edu.mx/servicio-social/" target="_blank">
+        <a href="http://gestion.itver.edu.mx/servicio-social/" target="_blank" >
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4 p-1" src="img/gestionVinculacion.webp" alt="">
         </a>
         <h3 class="areaTitle text-center font-bold text-xl">Servicio social</h3>
       </div>
     </div>
 
-    <div class="col-5 text-center p-5">
+    <!-- Segundo enlace -->
+    <div class="col-lg-4 col-sm-6 text-center p-3">
       <div class="area shadow-sm p-4 rounded-3">
-        <a href="http://www.veracruz.tecnm.mx/" target="_blank">
+        <a href="http://www.veracruz.tecnm.mx/" target="_blank" >
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4  p-1" src="img/ITVER-9.webp" alt="">
         </a>
         <h3 class="areaTitle text-center font-bold text-xl">TECNM Veracruz</h3>
