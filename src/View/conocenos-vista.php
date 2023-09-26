@@ -214,7 +214,12 @@ $jefeDepartamento = $administrativos->getJefeDepartamento();
 <!--  Fin Galería con modal para laboratorios de cómputo -->
 
 <!-- Modals de la galería -->
-
+<!-- <div class="bg-primary pt-5"></div>
+<div class="p-4 text-center">
+  <h5 class="font-bold">Autores de la página:</h5>
+  <p class="font-semibold">Estudiantes de la Generación 2018 - 2023</p>
+  <p>Nancy Daniela Mendez Arpidez</p>
+</div> -->
 <!-- Imagen 1 -->
 <div tabindex="-1" aria-labelledby="modalImage3" aria-hidden="true" class="modal fade" id="modalImage1">
   <div class="modal-dialog modal-lg modal-dialog-centered">
