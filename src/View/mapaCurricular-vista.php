@@ -301,8 +301,7 @@
                             <div class="sectionSeparator"></div>
                         </div>
                         <div class="col-12" style="text-align: center;">
-                            <p style="text-align: justify;"> El plan de estudios de la carrera de licenciatura en
-                                administración
+                            <p style="text-align: justify;"> El plan de estudios de la carrera de ingeniería en gestión empresarial
                                 ofrece un desarrollo integral y profesional con el objetivo de que el estudiante se
                                 pueda
                                 desenvolver en diferentes áreas
