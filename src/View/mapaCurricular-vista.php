@@ -58,7 +58,6 @@
                         data-bs-target="#tab-semestre8" type="button" aria-controls="tab-semestre8"
                         aria-selected="false">8vo Semestre</button>
                 </li>
-
             </ul>
         </li>
     </ul>
@@ -171,7 +170,6 @@
                 ?>
             </div>
         </div>
-
     </div>
 
     <div class='modal fade' id='modalReticula' tabindex='-1' aria-labelledby='modalReticula' aria-hidden='true'>
@@ -204,10 +202,9 @@
 
 
     <div class="justify-content-center text-center">
-        <p><a class="btn-warning w-auto btn font-bold" target="_blank" href="https://bit.ly/3ZwZhtr">Descargar
+        <p><a class="btn-warning w-auto btn font-bold" target="_blank" href="https://bit.ly/46vfP7D">Descargar
                 Retícula</a></p>
     </div>
-
 </div>
 <!-- Fin Mapa curricular -->
 

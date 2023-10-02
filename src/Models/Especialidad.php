@@ -17,12 +17,43 @@ class Especialidad
 
     public function getEspecialidades()
     {
-        $cn = $this->connection;
-        $sqlQ = "SELECT especialidadId, nombre FROM tbl_especialidad WHERE programaId=" . $GLOBALS['programaId'] . " AND status = 1;";
-        $data = $cn->query($sqlQ);
-        return $data;
+        $url =  $GLOBALS['api'] . '/api/especialidad/getEspecialidadesByProgramaId?programaId=' . $GLOBALS['programaId'];
+
+        $headers = ['Content-Type: application/json'];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($result, true);
     }
 
+    public function getEspecialidadByProgramaId($especialidadId)
+    {
+        $url =  $GLOBALS['api'] . '/api/especialidad/getEspecialidadByProgramaId';
+
+        $headers = ['Content-Type: application/json'];
+        $data = [
+            'programaId' => $GLOBALS['programaId'],
+            'especialidadId' => $especialidadId,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($result, true);
+    }
 
     function icono($Area)
     {
@@ -115,112 +146,101 @@ class Especialidad
 
     function imprimirNombres()
     {
-        $data = $this->getEspecialidades();
+        $especialidades = $this->getEspecialidades();
 
-        $especialidades = "";
-        if ($data->num_rows > 0) {
-            while ($row = $data->fetch_assoc()) {
-                $nombre = $row['nombre'];
-                $especialidades .= "<li>$nombre</li>";
-            }
+        $especialidadesNombre = "";
+        foreach ($especialidades['data'] as $especialidad) {
+            $especialidadesNombre .= "<li>" . $especialidad['nombre'] . "</li>";
         }
-        return $especialidades;
+
+        return $especialidadesNombre;
     }
 
     function imprimirDropdown()
     {
-        $data = $this->getEspecialidades();
+        $especialidades = $this->getEspecialidades();
 
-        $especialidades = "";
-        if ($data->num_rows > 0) {
-            while ($row = $data->fetch_assoc()) {
-                $especialidadId = $row['especialidadId'];
-                $nombre = $row['nombre'];
+        $lista = "";
+        foreach ($especialidades['data'] as $especialidad) {
+            $especialidadId = $especialidad['especialidadId'];
+            $nombre = $especialidad['nombre'];
 
-                $especialidades .= "<li>
-                                        <a class='dropdown-item' id='tab-especialidad$especialidadId-tab' data-bs-toggle='pill'
-                                            data-bs-target='#tab-especialidad$especialidadId' type='button' aria-controls='tab-especialidad$especialidadId'
-                                            aria-selected='false'>$nombre</a>
-                                    </li>";
-            }
+            $lista .= "<li>
+                            <a class='dropdown-item' id='tab-especialidad$especialidadId-tab' data-bs-toggle='pill'
+                                data-bs-target='#tab-especialidad$especialidadId' type='button' aria-controls='tab-especialidad$especialidadId'
+                                aria-selected='false'>$nombre</a>
+                        </li>";
         }
-        return $especialidades;
+
+        return $lista;
     }
 
 
     function imprimirNavPills()
     {
-        $data = $this->getEspecialidades();
-        $especialidades = "";
+        $especialidades = $this->getEspecialidades();
+        $tabla = "";
         $i = 0;
 
-        if ($data->num_rows > 0) {
-            while ($row = $data->fetch_assoc()) {
-                $especialidadId = $row['especialidadId'];
-                $nombre = $row['nombre'];
-                $selectedBool = $i == 0 ?  'true' :  'false';
-                $activeBool = $i == 0 ?  'active' :  '';
+        foreach ($especialidades['data'] as $especialidad) {
+            $especialidadId = $especialidad['especialidadId'];
+            $nombre = $especialidad['nombre'];
+            $selectedBool = $i == 0 ?  'true' :  'false';
+            $activeBool = $i == 0 ?  'active' :  '';
 
-                $especialidades .= "
+            $tabla .= "
                 <li class='especial nav-item' role='presentation'>
                     <button class='especial nav-link $activeBool id='tab-especialidad$especialidadId-tab' data-bs-toggle='pill' data-bs-target='#tab-especialidad$especialidadId'
                     type='button' role='tab' aria-controls='tab-especialidad$especialidadId' aria-selected='$selectedBool'>$nombre</button>
                 </li>";
-                $i++;
-            }
+            $i++;
         }
-        return $especialidades;
+        return $tabla;
     }
 
     function imprimirPills()
     {
-        $data = $this->getEspecialidades();
-        $especialidades = "";
+        $especialidades = $this->getEspecialidades();
+        $tabla = "";
         $i = 0;
 
-        if ($data->num_rows > 0) {
-            while ($row = $data->fetch_assoc()) {
-                $especialidadId = $row['especialidadId'];
-                $nombre = $row['nombre'];
-                $selectedBool = $i == 0 ?  'true' :  'false';
-                $activeBool = $i == 0 ?  'show active' :  '';
+        foreach ($especialidades['data'] as $especialidad) {
+            $especialidadId = $especialidad['especialidadId'];
+            $nombre = $especialidad['nombre'];
+            $activeBool = $i == 0 ?  'show active' :  '';
 
-                $especialidades .= "
+            $tabla .= "
                 <div class='tab-pane fade show $activeBool' id='tab-especialidad$especialidadId' role='tabpanel' aria-labelledby='tab-especialidad$especialidadId-tab'>
-                <h2 class='titleDarkSection text-center font-bold my-4 d-flex d-sm-none'>$nombre</h2>
-                    <div class='container'>";
+                    <h2 class='titleDarkSection text-center font-bold my-4 d-flex d-sm-none'>$nombre</h2>
+                <div class='container'>";
 
-                $especialidades .= $this->imprimirEspecialidad($especialidadId);
+            $tabla .= $this->imprimirEspecialidad($especialidadId);
 
-                $especialidades .= "</div>
+            $tabla .= "</div>
                 </div>";
-                $i++;
-            }
+            $i++;
         }
-        return $especialidades;
+
+        return $tabla;
     }
 
     function imprimirEspecialidad($especialidadId)
     {
-        $cn = $this->connection;
-        $sqlQ = "SELECT * FROM tbl_materia WHERE programaId=" . $GLOBALS['programaId'] . " AND especialidadId=$especialidadId AND status = 1;";
-        $data = $cn->query($sqlQ);
+        $especialidad = $this->getEspecialidadByProgramaId($especialidadId);
+        $especialidad =  $especialidad['data'];
+        $tabla = "<div class='row justify-content-md-start h-100 justify-content-center'>";
 
-        $tabla = "";
+        foreach ($especialidad['materias'] as $materia) {
+            $materiaId = $materia['materiaId'];
+            $nombre = $materia['nombre'];
+            $competencia = $materia['competencia'];
+            $area = $materia['area'];
+            $ruta_img = $this->icono($area);
+            $urlVideo = $materia['urlVideo'];
+            $urlPrograma = $materia['urlPrograma'];
 
-        if ($data->num_rows > 0) {
-            $tabla .= "<div class='row justify-content-md-start h-100 justify-content-center'>";
-            while ($row = $data->fetch_assoc()) {
-                $materiaId = $row['materiaId'];
-                $nombre = $row['nombre'];
-                $competencia = $row['competencia'];
-                $area = $row['area'];
-                $ruta_img = $this->icono($area);
-                $urlVideo = $row['urlVideo'];
-                $urlPrograma = $row['urlPrograma'];
-
-                // Cuadro de materia
-                $tabla .= "<div class='col-lg-4 col-md-6 col-sm-9 col-9 p-4 h-100 justify-content-center rounded-3'>
+            // Cuadro de materia
+            $tabla .= "<div class='col-lg-4 col-md-6 col-sm-9 col-9 p-4 h-100 justify-content-center rounded-3'>
                     <div class='row azul-medio' style='height: 88px;'>
                         <div class='d-flex justify-content-center h-100'>
                             <h5 class='text-white align-self-center rounded-top text-center font-semibold py-3'>$nombre</h5>
@@ -250,15 +270,26 @@ class Especialidad
                                         data-id='$materiaId'
                                         onclick='youtubePlay(this)'>
                                         Ver más </button>
-                                    </div>
                                 </div>
                             </div>
-                        </div>";
-            }
-            $tabla .= "</div>";
+                        </div>
+                    </div>";
         }
-        return $tabla;
 
-        $cn->close();
+        if ($especialidad['url']) {
+            $url = $especialidad['url'];
+
+            $tabla .=  "<div class='justify-content-center text-center'>
+                            <p>
+                                <a class='btn-warning w-auto btn font-bold' target='_blank'
+                                href='$url'>Ver plan de estudio</a>
+                            </p>
+                        </div>";
+        }
+
+
+        $tabla .= "</div>";
+
+        return $tabla;
     }
 }

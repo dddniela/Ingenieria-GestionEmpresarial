@@ -84,60 +84,53 @@ class Docente
         $this->urlImagen = $urlImagen;
     }
 
-    public function getImagenDocente()
+    public function getImagenDocente($filename)
     {
         return $this->urlImagen;
     }
 
-    public function getDocentes()
+    public static function getDocentes($limiteInferior, $limiteSuperior)
     {
-        $docentes = array();
-        $sql = "SELECT tbl_docente.docenteId, tbl_docente.nombre, tbl_docente.descripcion, tbl_docente.informacionAcademica,
-        tbl_docente.materias, tbl_docente.contacto, tbl_docente.urlImagen FROM tbl_docente AS tbl_docente
-        INNER JOIN tbl_programa_docente AS tbl_programa_docente
-        ON tbl_docente.docenteId = tbl_programa_docente.docenteId
-        AND tbl_programa_docente.status = 1 
-        AND tbl_programa_docente.programaId=" . $GLOBALS['programaId'] . " WHERE tbl_docente.status = 1;";
-        $docentes = mysqli_query($this->connection, $sql);
-        return $docentes;
+        $url =  $GLOBALS['api'] . '/api/docente/getDocentesByprogramaId';
+
+        $headers = ['Content-Type: application/json'];
+        $data = [
+            'programaId' => $GLOBALS['programaId'],
+            'offset' => $limiteInferior ? (int)$limiteInferior : null,
+            'limit' => $limiteSuperior ? $limiteSuperior : null
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($result, true);
     }
 
-    function obtenerInformacion($limiteInferior)
+    function imprimirDatos($limInferior)
     {
-        $cn = $this->connection;
-        $stmt = $cn->prepare("SELECT tbl_docente.docenteId, tbl_docente.nombre, tbl_docente.descripcion, tbl_docente.informacionAcademica,
-        tbl_docente.materias, tbl_docente.contacto, tbl_docente.urlImagen FROM tbl_docente AS tbl_docente
-        INNER JOIN tbl_programa_docente AS tbl_programa_docente
-        ON tbl_docente.docenteId = tbl_programa_docente.docenteId
-        AND tbl_programa_docente.status = 1 
-        AND tbl_programa_docente.programaId=" . $GLOBALS['programaId']
-            . " WHERE tbl_docente.status = 1  ORDER BY nombre ASC LIMIT ?,?");
-        $limiteInferior =  $limiteInferior - 1;
-        $limiteSuperior =  12;
-        $stmt->bind_param('ii', $limiteInferior, $limiteSuperior);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $docentes = $result->fetch_all(MYSQLI_ASSOC);
-        return $result;
-    }
-
-    function imprimirDatos($limInferior, $limSuperior)
-    {
-        $docentes = $this->obtenerInformacion($limInferior);
+        $docentes = $this->getDocentes($limInferior, 12);
         $codigo = "";
-        $cont = 1;
-        foreach ($docentes as $key => $docente) {
+
+        foreach ($docentes['data'] as $docente) {
             $docenteId = $docente['docenteId'];
             $nombre = $docente['nombre'];
             $descripcion = $docente['descripcion'];
             $informacionAcademica = $docente['informacionAcademica'];
             $materias = $docente['materias'];
             $contacto = $docente['contacto'];
-            $urlImagen = $docente['urlImagen'];
+            $urlImagen = $GLOBALS['PATH_DOCENTE'] . $docente['urlImagen'];
+
             $codigo .= "<div class='col-lg-4 col-sm-6 text-center p-3'>
                                 <div class='area shadow-sm p-4 rounded-3'>
                                     <div class='d-flex flex-row justify-content-center my-1'>
-                                        <img class='rounded-circle p-1 bg-primary imagen-docentes' src='img/Docentes/" . $urlImagen . "' alt=''>
+                                        <img class='rounded-circle p-1 bg-primary imagen-docentes' src='" . $urlImagen . "' alt=''>
                                     </div>
                                     <div class='d-flex flex-row justify-content-center'>
                                         <h3 class='tituloAreaDocente text-center font-bold text-xl'>$nombre</h3>
@@ -160,7 +153,7 @@ class Docente
                                             <div class='row justify-content-center m-2'>
                                                 <div class='col-7 col-lg-auto justify-content-center m-2'>
                                                     <div class='d-flex justify-content-center'>
-                                                        <img class='rounded-circle p-1 bg-primary imagen-docentesModal' src='img/Docentes/" . $urlImagen . "' alt=''>
+                                                        <img class='rounded-circle p-1 bg-primary imagen-docentesModal' src='" . $urlImagen . "' alt=''>
                                                     </div>
                                                 </div>
                                                 <div class='col-12 col-lg-7 justify-content-center align-items-center m-2'>
@@ -209,61 +202,38 @@ class Docente
 
     function generarPaginacion()
     {
-        $docentes = $this->getDocentes();
-        $numRows = mysqli_num_rows($docentes);
-        $numPaginas = $numRows / 12;
-        $residuo = $numRows % 12;
-        if ($residuo > 0) {
-            $numPaginas = $numPaginas + 1;
-        }
-        $i = 1;
-        $limInferior = 1;
-        $limSuperior = 12;
-        $paginacion = '';
-        $paginacion .= '<nav aria-label="Page navigation example">';
-        $paginacion .= '<ul class="pagination justify-content-center">';
-        if (isset($_GET['inferior'])) {
-            if ($_GET['inferior'] == 1) {
-                $paginacion .= '<li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>';
-            } else {
-                $LI = $_GET['inferior'] - 12;
-                $LS = $_GET['superior'] - 12;
-                $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $LI . '&superior=' . $LS . '">Anterior</a></li>';
-            }
+        $docentes = $this->getDocentes(null, null);
+        $docentesPorPagina = 12;
+        $numRows = $docentes['count'];
+        $numPaginas = ceil($numRows / $docentesPorPagina);
+        $currentPage = isset($_GET['inferior']) ? (int)$_GET['inferior'] / $docentesPorPagina + 1 : 1;
+
+        $paginacion = '<nav><ul class="pagination justify-content-center">';
+
+        // Botón "Anterior"
+        if ($currentPage > 1) {
+            $prevPage = ($currentPage - 2) * $docentesPorPagina;
+            $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $prevPage . '">Anterior</a></li>';
         } else {
             $paginacion .= '<li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>';
         }
-        while ($i <= $numPaginas) {
-            if (isset($_GET['superior'])) {
-                if ($limSuperior == $_GET['superior']) {
-                    $paginacion .= '<li class="page-item active"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
-                } else {
-                    $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
-                }
-            } else {
-                if ($i == 1) {
-                    $paginacion .= '<li class="page-item active"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
-                } else {
-                    $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $limInferior . '&superior=' . $limSuperior . '">' . $i . '</a></li>';
-                }
-            }
-            $i = $i + 1;
-            $limInferior = $limInferior + 12;
-            $limSuperior = $limSuperior + 12;
+
+        // Enlaces de páginas
+        for ($i = 1; $i <= $numPaginas; $i++) {
+            $pageStart = ($i - 1) * $docentesPorPagina;
+            $activeClass = $currentPage === $i ? 'active' : '';
+            $paginacion .= '<li class="page-item ' . $activeClass . '"><a class="page-link" href="?option=2&inferior=' . $pageStart . '">' . $i . '</a></li>';
         }
-        if (isset($_GET['superior'])) {
-            if ($_GET['superior'] >= $numRows) {
-                $paginacion .= '<li class="page-item disabled"><a class="page-link" href="#">Siguiente</a></li>';
-            } else {
-                $LI = $_GET['inferior'] + 12;
-                $LS = $_GET['superior'] + 12;
-                $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $LI . '&superior=' . $LS . '">Siguiente</a></li>';
-            }
+
+        // Botón "Siguiente"
+        if ($currentPage < $numPaginas) {
+            $nextPage = $currentPage * $docentesPorPagina;
+            $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=' . $nextPage . '">Siguiente</a></li>';
         } else {
-            $paginacion .= '<li class="page-item"><a class="page-link" href="?option=2&inferior=13&superior=24">Siguiente</a></li>';
+            $paginacion .= '<li class="page-item disabled"><a class="page-link" href="#">Siguiente</a></li>';
         }
-        $paginacion .= '</ul>';
-        $paginacion .= '</nav>';
+
+        $paginacion .= '</ul></nav>';
 
         return $paginacion;
     }

@@ -4,6 +4,7 @@ $seccion = new Seccion();
 $seccion->setConnection($conn->getDB());
 
 $objetivo = $seccion->getObjetivo();
+$objetivo = $objetivo['data'];
 $ingreso = $seccion->getPerfilIng();
 
 ?>
@@ -50,17 +51,15 @@ $ingreso = $seccion->getPerfilIng();
         <div class="lightSection col-lg-6 col-12 p-4">
             <div class="d-flex justify-content-center align-items-center w-100 h-100">
                 <div class="row g-0">
-                    <div class="col-12">
-                        <h2 class="sectionTitle text-center font-bold m-3">
-                            Objetivo general
-                        </h2>
+                <div class="col-12">
+                        <h2 class="sectionTitle text-center font-bold m-3">Objetivo general</h2>
                         <div class="sectionSeparator"></div>
                     </div>
                     <div class="col-12" style="text-align: center;">
                         <p style="text-align: justify;">
                             <?php
                             if ($objetivo) {
-                                echo $objetivo->descripcion;
+                                echo $objetivo['descripcion'];
                             }
                             ?>
                         </p>

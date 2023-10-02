@@ -75,28 +75,28 @@ class Materia
                 break;
             case 'Internacionales':
                 $ruta_img = 'img/iconos/internacionales.png';
-                break; 
+                break;
             case 'Portuaria':
                 $ruta_img = 'img/iconos/portuaria.png';
-                break; 
+                break;
             case 'Gestion':
-                 $ruta_img = 'img/iconos/gestion.png';
+                $ruta_img = 'img/iconos/gestion.png';
                 break;
             case 'Humano':
                 $ruta_img = 'img/iconos/humano.png';
-                break; 
+                break;
             case 'Contabilidad':
                 $ruta_img = 'img/iconos/contabilidad.png';
-                break; 
+                break;
             case 'Investigacion':
                 $ruta_img = 'img/iconos/investigacion.png';
-                break; 
+                break;
             case 'Legislacion':
                 $ruta_img = 'img/iconos/legislacion.png';
-                break; 
+                break;
             case 'Estadistica':
                 $ruta_img = 'img/iconos/estadistica.png';
-                break; 
+                break;
             case 'Operaciones':
                 $ruta_img = 'img/iconos/operaciones.png';
                 break;
@@ -109,29 +109,46 @@ class Materia
         }
         return $ruta_img;
     }
-
-    function imprimir($NumeroSemestre)
+    public function getMateriasBySemestre($semestre)
     {
-        $cn = $this->connection;
-        $sqlQ = "SELECT * FROM tbl_materia WHERE semestre=$NumeroSemestre AND especialidadId IS NULL AND programaId=" . $GLOBALS['programaId'] . ";";
-        $ResultSet = $cn->query($sqlQ);
+        $url =  $GLOBALS['api'] . '/api/materia/getMateriasBySemestre';
 
-        $tabla = "";
+        $headers = ['Content-Type: application/json'];
+        $data = [
+            'programaId' => $GLOBALS['programaId'],
+            'semestre' => $semestre,
+        ];
 
-        if ($ResultSet->num_rows > 0) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        $result = curl_exec($ch);
+        curl_close($ch);
 
-            $tabla .= "<div class='row justify-content-md-start justify-content-center'>";
-            while ($row = $ResultSet->fetch_assoc()) {
-                $materiaId = $row['materiaId'];
-                $nombre = $row['nombre'];
-                $competencia = $row['competencia'];
-                $area = $row['area'];
-                $urlVideo = $row['urlVideo'];
-                $urlPrograma = $row['urlPrograma'];
-                $ruta_img = $this->icono($area);
+        return json_decode($result, true);
+    }
 
-                // Cuadro de materia
-                $tabla .= "<div class='col-lg-4 col-md-6 col-sm-9 col-9 p-4 h-100 justify-content-center rounded-3'>
+    function imprimir($semestre)
+    {
+        $materias = $this->getMateriasBySemestre($semestre);
+
+        $tabla = "<div class='row justify-content-md-start justify-content-center'>";
+
+        foreach ($materias['data'] as $materia) {
+            $materiaId = $materia['materiaId'];
+            $nombre = $materia['nombre'];
+            $competencia = $materia['competencia'];
+            $area = $materia['area'];
+            $urlVideo = $materia['urlVideo'];
+            $urlPrograma = $materia['urlPrograma'];
+            $ruta_img = $this->icono($area);
+
+            // Cuadro de materia
+            $tabla .= "<div class='col-lg-4 col-md-6 col-sm-9 col-9 p-4 h-100 justify-content-center rounded-3'>
                 <div class='row azul-medio' style='height: 88px;'>
                     <div class='d-flex justify-content-center h-100'>
                         <h5 class='text-white align-self-center rounded-top text-center font-semibold py-3'>$nombre</h5>
@@ -165,13 +182,10 @@ class Materia
                             </div>
                         </div>
                     </div>";
-            }
-            $tabla .= "</div>";
         }
+        $tabla .= "</div>";
 
         return $tabla;
-
-        $cn->close();
     }
 
     function imprimir1erSemestre()
@@ -218,5 +232,4 @@ class Materia
     {
         return $this->imprimir(9);
     }
-
 }

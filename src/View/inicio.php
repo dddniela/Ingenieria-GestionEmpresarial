@@ -2,8 +2,7 @@
 <section>
   <div id="myCarousel" class="carousel slide col-lg-12 col-sm-12" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
@@ -207,21 +206,18 @@
       <div class="galleryContainer bg-light">
         <div class="row g-0">
           <div class="col-4 px-2">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/juliaRiveraMoreno.png" alt="">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/mariaEugeniaPalenciaCastillo.png"
-              alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'juliaRiveraMoreno.png'; ?>" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'mariaEugeniaPalenciaCastillo.png'; ?>" alt="">
           </div>
 
           <div class="col-4 px-2">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2"
-              src="img/Docentes/claudiaAlejandraRamirezDelgado.png" alt="">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/rosarioPerezJimenez.png" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'claudiaAlejandraRamirezDelgado.png'; ?>" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'rosarioPerezJimenez.png'; ?>" alt="">
           </div>
 
           <div class="col-4 px-2">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="img/Docentes/cutbertoMaciasMora.png" alt="">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2"
-              src="img/Docentes/perfectoGabrielTrujilloCastro.png" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'cutbertoMaciasMora.png'; ?>" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'perfectoGabrielTrujilloCastro.png'; ?>" alt="">
           </div>
 
         </div>
@@ -237,8 +233,8 @@
           </div>
           <div class="col-12" style="text-align: center;">
             <p style="text-align: justify;"> Nuestros docentes son impulsores de cambio, son el elemento esencial de
-              nuestra institución, contamos con profesionales de diversas disciplinas, quienes demuestran diariamente 
-              su compromiso más allá de las aulas. Son personas que tienen la facultad de transformar vidas e impactar a 
+              nuestra institución, contamos con profesionales de diversas disciplinas, quienes demuestran diariamente
+              su compromiso más allá de las aulas. Son personas que tienen la facultad de transformar vidas e impactar a
               las futuras generaciones de estudiantes.
             </p>
             <a class="btn btn-warning font-bold" href="?option=2" role="button">¡Conocer docentes!</a>
@@ -259,10 +255,10 @@
   <!-- Row que contiene los enlaces -->
   <div class="row g-0 justify-content-center">
 
-   <!-- Primer enlace -->
+    <!-- Primer enlace -->
     <div class="col-lg-4 col-sm-6 text-center p-3">
       <div class="area shadow-sm p-4 rounded-3">
-        <a href="http://gestion.itver.edu.mx/servicio-social/" target="_blank" >
+        <a href="http://gestion.itver.edu.mx/servicio-social/" target="_blank">
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4 p-1" src="img/gestionVinculacion.webp" alt="">
         </a>
         <h3 class="areaTitle text-center font-bold text-xl">Servicio social</h3>
@@ -272,7 +268,7 @@
     <!-- Segundo enlace -->
     <div class="col-lg-4 col-sm-6 text-center p-3">
       <div class="area shadow-sm p-4 rounded-3">
-        <a href="http://www.veracruz.tecnm.mx/" target="_blank" >
+        <a href="http://www.veracruz.tecnm.mx/" target="_blank">
           <img class="img-fluid w-100 shadow-1-strong rounded mb-4  p-1" src="img/ITVER-9.webp" alt="">
         </a>
         <h3 class="areaTitle text-center font-bold text-xl">TECNM Veracruz</h3>
@@ -301,26 +297,22 @@
       <div class="d-flex flex-row justify-content-center">
         <a class="mx-2" href="https://www.tecnm.mx/" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-column justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/tecnm-logo.PNG"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/tecnm-logo.PNG" alt="">
           </div>
         </a>
         <a class="mx-2" href="https://www.facebook.com/TecNMmx" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/facebook.PNG"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/facebook.PNG" alt="">
           </div>
         </a>
         <a class="mx-2" href="https://twitter.com/TecNM_MX" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/twitterX.png"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/twitterX.png" alt="">
           </div>
         </a>
         <a class="mx-2" href="https://www.youtube.com/user/SNESTMX" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/youtube.PNG"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/youtube.PNG" alt="">
           </div>
         </a>
       </div>
@@ -330,27 +322,22 @@
       <div class="d-flex flex-row justify-content-center">
         <a class="mx-2" href="https://www.veracruz.tecnm.mx/index.php" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/itver-logo.PNG"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/itver-logo.PNG" alt="">
           </div>
         </a>
         <a class="mx-2" href="https://www.facebook.com/ITVeracruz" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/facebook.PNG"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/facebook.PNG" alt="">
           </div>
         </a>
         <a class="mx-2" href="https://twitter.com/tvitver" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/twitterX.png"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/twitterX.png" alt="">
           </div>
         </a>
-        <a class="mx-2" href="https://www.youtube.com/channel/UCVBkOP_rj5ulvlriG88jTzA" target="_blank"
-          style="text-decoration: none;">
+        <a class="mx-2" href="https://www.youtube.com/channel/UCVBkOP_rj5ulvlriG88jTzA" target="_blank" style="text-decoration: none;">
           <div class="d-flex flex-row justify-content-center">
-            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/youtube.PNG"
-              alt="">
+            <img class="img-fluid shadow-1-strong rounded mb-4 p-1" style="height: 40px" src="img/iconos/youtube.PNG" alt="">
           </div>
         </a>
       </div>

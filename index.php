@@ -13,8 +13,9 @@ $urlControl = array(
 );
 
 $programaId = 1;
-$api = 'http://localhost:3010/';
+$api = 'http://localhost:3010';
 $PATH_DOCENTE =  $GLOBALS['api'] . '/imagenes/Ing-Gestion-Empresarial/docentes/';
+$PATH_COMUNIDAD =  $GLOBALS['api'] . '/imagenes/Ing-Gestion-Empresarial/comunidades/';
 
 $conn = new Conexion();
 $conn->connect();
