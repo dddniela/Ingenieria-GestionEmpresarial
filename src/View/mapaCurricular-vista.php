@@ -1,3 +1,10 @@
+<?php
+require_once("src/Models/Seccion.php");
+$seccion = new Seccion();
+$seccion->setConnection($conn->getDB());
+
+$reticula = $seccion->imprimirBotonReticula();
+?>
 <div class="row g-0">
     <div class="position-relative w-100 overflow-hidden">
         <img class="w-100 img-fluid" src="img/portadas/IMG_3122.png" alt="">
@@ -15,48 +22,31 @@
     <h2 class="text-center text-warning font-bold bg-primary text-2xl py-2">Retícula de Materias</h2>
     <ul class="nav nav-pills justify-content-center mb-3 d-flex d-sm-none" id="pills-tab" role="tablist">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false">Selecciona el semestre</a>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Selecciona el semestre</a>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" id="tab-semestre1-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre1" type="button" aria-controls="tab-semestre1"
-                        aria-selected="false">1er Semestre</a>
+                    <a class="dropdown-item" id="tab-semestre1-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre1" type="button" aria-controls="tab-semestre1" aria-selected="false">1er Semestre</a>
                 </li>
                 <li>
-                    <button class="dropdown-item" id="tab-semestre2-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre2" type="button" aria-controls="tab-semestre2"
-                        aria-selected="false">2do Semestre</button>
+                    <button class="dropdown-item" id="tab-semestre2-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre2" type="button" aria-controls="tab-semestre2" aria-selected="false">2do Semestre</button>
                 </li>
                 <li>
-                    <button class="dropdown-item" id="tab-semestre3-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre3" type="button" aria-controls="tab-semestre3"
-                        aria-selected="false">3er Semestre</button>
+                    <button class="dropdown-item" id="tab-semestre3-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre3" type="button" aria-controls="tab-semestre3" aria-selected="false">3er Semestre</button>
                 </li>
                 <li>
-                    <button class="dropdown-item" id="tab-semestre4-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre4" type="button" aria-controls="tab-semestre4"
-                        aria-selected="false">4to Semestre</button>
+                    <button class="dropdown-item" id="tab-semestre4-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre4" type="button" aria-controls="tab-semestre4" aria-selected="false">4to Semestre</button>
                 </li>
                 <li>
-                    <button class="dropdown-item" id="tab-semestre5-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre5" type="button" aria-controls="tab-semestre5"
-                        aria-selected="false">5to Semestre</button>
+                    <button class="dropdown-item" id="tab-semestre5-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre5" type="button" aria-controls="tab-semestre5" aria-selected="false">5to Semestre</button>
                 </li>
                 <li>
-                    <button class="dropdown-item" id="tab-semestre6-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre6" type="button" aria-controls="tab-semestre6"
-                        aria-selected="false">6to Semestre</button>
+                    <button class="dropdown-item" id="tab-semestre6-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre6" type="button" aria-controls="tab-semestre6" aria-selected="false">6to Semestre</button>
                 </li>
                 <li>
-                    <button class="dropdown-item" id="tab-semestre7-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre7" type="button" aria-controls="tab-semestre7"
-                        aria-selected="false">7mo Semestre</button>
+                    <button class="dropdown-item" id="tab-semestre7-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre7" type="button" aria-controls="tab-semestre7" aria-selected="false">7mo Semestre</button>
                 </li>
                 <li>
-                    <button class="dropdown-item" id="tab-semestre8-tab" data-bs-toggle="pill"
-                        data-bs-target="#tab-semestre8" type="button" aria-controls="tab-semestre8"
-                        aria-selected="false">8vo Semestre</button>
+                    <button class="dropdown-item" id="tab-semestre8-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre8" type="button" aria-controls="tab-semestre8" aria-selected="false">8vo Semestre</button>
                 </li>
             </ul>
         </li>
@@ -64,36 +54,28 @@
 
     <ul class="nav nav-pills justify-content-center mb-3 d-none d-sm-flex" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="tab-semestre1-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre1"
-                type="button" role="tab" aria-controls="tab-semestre1" aria-selected="true">1er Semestre</button>
+            <button class="nav-link active" id="tab-semestre1-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre1" type="button" role="tab" aria-controls="tab-semestre1" aria-selected="true">1er Semestre</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre2-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre2"
-                type="button" role="tab" aria-controls="tab-semestre2" aria-selected="false">2do Semestre</button>
+            <button class="nav-link" id="tab-semestre2-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre2" type="button" role="tab" aria-controls="tab-semestre2" aria-selected="false">2do Semestre</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre3-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre3"
-                type="button" role="tab" aria-controls="tab-semestre3" aria-selected="false">3er Semestre</button>
+            <button class="nav-link" id="tab-semestre3-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre3" type="button" role="tab" aria-controls="tab-semestre3" aria-selected="false">3er Semestre</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre4-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre4"
-                type="button" role="tab" aria-controls="tab-semestre4" aria-selected="false">4to Semestre</button>
+            <button class="nav-link" id="tab-semestre4-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre4" type="button" role="tab" aria-controls="tab-semestre4" aria-selected="false">4to Semestre</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre5-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre5"
-                type="button" role="tab" aria-controls="tab-semestre5" aria-selected="false">5to Semestre</button>
+            <button class="nav-link" id="tab-semestre5-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre5" type="button" role="tab" aria-controls="tab-semestre5" aria-selected="false">5to Semestre</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre6-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre6"
-                type="button" role="tab" aria-controls="tab-semestre6" aria-selected="false">6to Semestre</button>
+            <button class="nav-link" id="tab-semestre6-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre6" type="button" role="tab" aria-controls="tab-semestre6" aria-selected="false">6to Semestre</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre7-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre7"
-                type="button" role="tab" aria-controls="tab-semestre7" aria-selected="false">7mo Semestre</button>
+            <button class="nav-link" id="tab-semestre7-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre7" type="button" role="tab" aria-controls="tab-semestre7" aria-selected="false">7mo Semestre</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="tab-semestre8-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre8"
-                type="button" role="tab" aria-controls="tab-semestre8" aria-selected="false">8vo Semestre</button>
+            <button class="nav-link" id="tab-semestre8-tab" data-bs-toggle="pill" data-bs-target="#tab-semestre8" type="button" role="tab" aria-controls="tab-semestre8" aria-selected="false">8vo Semestre</button>
         </li>
 
     </ul>
@@ -177,23 +159,18 @@
             <div class='modal-content'>
                 <div class='modal-header azul-medio'>
                     <h5 class='modal-title text-white font-semibold' id='modalTitulo'></h5>
-                    <button type='button' class='btn-close text-white' data-bs-dismiss='modal'
-                        aria-label='Close'></button>
+                    <button type='button' class='btn-close text-white' data-bs-dismiss='modal' aria-label='Close'></button>
                 </div>
                 <div class='modal-body'>
                     <div class='d-flex justify-content-center mb-4' style='text-align: justify;'>
                         <p id="descReticula"></p>
                     </div>
                     <div class='d-flex justify-content-center my-2'>
-                        <iframe class='aspect-video video-reticula' id='videoReticula' src=''
-                            title='YouTube video player' frameborder='0'
-                            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                            allowfullscreen>
+                        <iframe class='aspect-video video-reticula' id='videoReticula' src='' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>
                         </iframe>
                     </div>
                     <div class='d-flex p-2 justify-content-center align-items-center'>
-                        <a target='_blank' href='' id="urlReticula"><button type='button'
-                                class='btn btn-warning font-bold'>Descargar programa</button></a>
+                        <a target='_blank' href='' id="urlReticula"><button type='button' class='btn btn-warning font-bold'>Descargar programa</button></a>
                     </div>
                 </div>
             </div>
@@ -202,8 +179,11 @@
 
 
     <div class="justify-content-center text-center">
-        <p><a class="btn-warning w-auto btn font-bold" target="_blank" href="https://bit.ly/46vfP7D">Descargar
-                Retícula</a></p>
+        <?php
+        if ($reticula) {
+            echo $reticula;
+        }
+        ?>
     </div>
 </div>
 <!-- Fin Mapa curricular -->
@@ -254,8 +234,7 @@
     <div class="w-full darkSection bg-dark">
         <ul class="nav nav-pills nav-fill justify-content-center mb-3 d-flex d-sm-none" id="pills-tab" role="tablist">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                    aria-expanded="false">Selecciona la especialidad</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Selecciona la especialidad</a>
                 <ul class="dropdown-menu">
                     <?php
                     echo $especialidad->imprimirDropdown();
@@ -726,8 +705,7 @@
                             </p>
 
                             <div class="justify-content-center text-center">
-                                <p><a class="btn-warning w-auto btn font-bold" target="_blank"
-                                        href="https://bit.ly/3t9gVaK">Formas de titulación</a></p>
+                                <p><a class="btn-warning w-auto btn font-bold" target="_blank" href="https://bit.ly/3t9gVaK">Formas de titulación</a></p>
                             </div>
 
                         </div>
@@ -766,8 +744,7 @@
                             <h5 class="font-bold" style="text-align: justify">Medios de contacto:</h5>
                             <p class="text-dark" style="text-align: justify;">
                                 Correo electrónico: coo_cle@vercaruz.tecnm.mx <br>
-                                FB: <a class="text-decoration-none"
-                                    href="https://www.facebook.com/LenguaExtranjeraItver" target="_blank"> Centro de
+                                FB: <a class="text-decoration-none" href="https://www.facebook.com/LenguaExtranjeraItver" target="_blank"> Centro de
                                     Idiomas ITVERr</a><br>
                             </p>
                         </div>
@@ -818,7 +795,7 @@
                 }
             });
 
-        $("#modalReticula").on('hidden.bs.modal', function (e) {
+        $("#modalReticula").on('hidden.bs.modal', function(e) {
             $("#modalReticula iframe").attr("src", '');
         });
 
@@ -829,7 +806,7 @@
                 videoSRCauto = videoReticula + "?autoplay=1";
 
             $(theModal + ' iframe').attr('src', videoSRCauto);
-            $(theModal + ' button.btn-close').click(function () {
+            $(theModal + ' button.btn-close').click(function() {
                 $(theModal + ' iframe').attr('src', videoReticula);
             });
         }
