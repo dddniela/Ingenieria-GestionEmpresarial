@@ -217,7 +217,7 @@
 
           <div class="col-4 px-2">
             <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'cutbertoMaciasMora.png'; ?>" alt="">
-            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'perfectoGabrielTrujilloCastro.png'; ?>" alt="">
+            <img class="img-fluid w-100 shadow-1-strong rounded m-2" src="<?php echo $GLOBALS['PATH_DOCENTE'] . 'perfectoGabrielTrujilloCastro.webp'; ?>" alt="">
           </div>
 
         </div>
