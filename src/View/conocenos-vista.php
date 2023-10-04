@@ -5,8 +5,15 @@ $administrativos = new Administrativo();
 $coordinador = $administrativos->getCoordinador();
 $jefeDepartamento =  $administrativos->getJefeDepartamento();
 
+$type = pathinfo($jefeDepartamento['imagen'], PATHINFO_EXTENSION);
 $imagenJefeDep = $GLOBALS['PATH_DOCENTE'] . $jefeDepartamento['imagen'];
+$imagenJefeDep = file_get_contents($imagenJefeDep);
+$imagenJefeDep = 'data:image/' . $type . ';base64,' . base64_encode($imagenJefeDep);
+
+$type = pathinfo($coordinador['imagen'], PATHINFO_EXTENSION);
 $imagenCoordinador = $GLOBALS['PATH_DOCENTE'] . $coordinador['imagen'];
+$imagenCoordinador = file_get_contents($imagenCoordinador);
+$imagenCoordinador = 'data:image/' . $type . ';base64,' . base64_encode($imagenCoordinador);
 ?>
 <!-- Portada -->
 <div class="row g-0">
