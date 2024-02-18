@@ -26,88 +26,91 @@ class Materia
         $ruta_img = "";
         switch ($Area) {
             case 'Calculo':
-                $ruta_img = 'img/iconos/calculo.png';
+                $ruta_img = 'calculo.png';
                 break;
             case 'Asignaturas Comunes':
-                $ruta_img = 'img/iconos/asignaturas-comunes.png';
+                $ruta_img = 'asignaturas-comunes.png';
                 break;
             case 'Quimica':
-                $ruta_img = 'img/iconos/quimica.png';
+                $ruta_img = 'quimica.png';
                 break;
             case 'Fisica':
-                $ruta_img = 'img/iconos/fisica.png';
+                $ruta_img = 'fisica.png';
                 break;
             case 'Software':
-                $ruta_img = 'img/iconos/software.png';
+                $ruta_img = 'software.png';
                 break;
             case 'Social':
-                $ruta_img = 'img/iconos/social.png';
+                $ruta_img = 'social.png';
                 break;
             case 'Lesgilacion':
-                $ruta_img = 'img/iconos/legislacion.png';
+                $ruta_img = 'legislacion.png';
                 break;
             case 'Probabilidad':
-                $ruta_img = 'img/iconos/probabilidad.png';
+                $ruta_img = 'probabilidad.png';
                 break;
             case 'Empresariales':
-                $ruta_img = 'img/iconos/empresariales.png';
+                $ruta_img = 'empresariales.png';
                 break;
             case 'Economia':
-                $ruta_img = 'img/iconos/economia.png';
+                $ruta_img = 'economia.png';
                 break;
             case 'Directivas':
-                $ruta_img = 'img/iconos/directivas.png';
+                $ruta_img = 'directivas.png';
                 break;
             case 'Matematicas':
-                $ruta_img = 'img/iconos/matematicas.png';
+                $ruta_img = 'matematicas.png';
                 break;
             case 'Macroeconomia':
-                $ruta_img = 'img/iconos/macroeconomia.png';
+                $ruta_img = 'macroeconomia.png';
                 break;
             case 'Finanzas':
-                $ruta_img = 'img/iconos/finanzas.png';
+                $ruta_img = 'finanzas.png';
                 break;
             case 'Procesos':
-                $ruta_img = 'img/iconos/procesos.png';
+                $ruta_img = 'procesos.png';
                 break;
             case 'Mercadotecnia':
-                $ruta_img = 'img/iconos/mercadotecnia.png';
+                $ruta_img = 'mercadotecnia.png';
                 break;
             case 'Internacionales':
-                $ruta_img = 'img/iconos/internacionales.png';
+                $ruta_img = 'internacionales.png';
                 break;
             case 'Portuaria':
-                $ruta_img = 'img/iconos/portuaria.png';
+                $ruta_img = 'portuaria.png';
                 break;
             case 'Gestion':
-                $ruta_img = 'img/iconos/gestion.png';
+                $ruta_img = 'gestion.png';
                 break;
             case 'Humano':
-                $ruta_img = 'img/iconos/humano.png';
+                $ruta_img = 'humano.png';
                 break;
             case 'Contabilidad':
-                $ruta_img = 'img/iconos/contabilidad.png';
+                $ruta_img = 'contabilidad.png';
                 break;
             case 'Investigacion':
-                $ruta_img = 'img/iconos/investigacion.png';
+                $ruta_img = 'investigacion.png';
                 break;
             case 'Legislacion':
-                $ruta_img = 'img/iconos/legislacion.png';
+                $ruta_img = 'legislacion.png';
                 break;
             case 'Estadistica':
-                $ruta_img = 'img/iconos/estadistica.png';
+                $ruta_img = 'estadistica.png';
                 break;
             case 'Operaciones':
-                $ruta_img = 'img/iconos/operaciones.png';
+                $ruta_img = 'operaciones.png';
                 break;
             case 'MercElectronica':
-                $ruta_img = 'img/iconos/mercElectronica.png';
+                $ruta_img = 'mercElectronica.png';
                 break;
             default:
-                $ruta_img = 'img/iconos/asignaturas-comunes.png';
+                $ruta_img = 'asignaturas-comunes.png';
                 break;
         }
-        return $ruta_img;
+        $type = pathinfo($ruta_img, PATHINFO_EXTENSION);
+        $urlImagen = file_get_contents($GLOBALS['PATH_ICONO'] . $ruta_img);
+        $urlImagen = 'data:image/' . $type . ';base64,' . base64_encode($urlImagen);
+        return $urlImagen;
     }
     public function getMateriasBySemestre($semestre)
     {

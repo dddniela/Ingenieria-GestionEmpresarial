@@ -130,9 +130,12 @@ class Seccion
         foreach ($perfilEgreso['objeto'] as $punto) {
             $descripcion = $punto['descripcion'];
             $imagen = $punto['imagen'];
+            $type = pathinfo($imagen, PATHINFO_EXTENSION);
+            $urlImagen = file_get_contents($GLOBALS['PATH_ICONO'] . $imagen);
+            $urlImagen = 'data:image/' . $type . ';base64,' . base64_encode($urlImagen);
             $tabla .=  "<div class='col-lg-4 col-sm-6 text-center p-3'>
                             <div class='area shadow-sm p-4'>
-                                <img class='imagenArea items-center' src='$imagen' alt=''>
+                                <img class='imagenArea items-center' src='$urlImagen' alt=''>
                                 <p class='textoArea'>$descripcion</p>
                             </div>
                         </div>";
@@ -149,10 +152,13 @@ class Seccion
         foreach ($objetivosEducacionales['objeto'] as $objetivo) {
             $descripcion = $objetivo['descripcion'];
             $imagen = $objetivo['imagen'];
+            $type = pathinfo($imagen, PATHINFO_EXTENSION);
+            $urlImagen = file_get_contents($GLOBALS['PATH_ICONO'] . $imagen);
+            $urlImagen = 'data:image/' . $type . ';base64,' . base64_encode($urlImagen);
             $tabla .= "<div class='col-lg-6 col-sm-6 text-start p-3'>
                             <div class='row g-0 area shadow-sm p-4'>
                                 <div class='col-lg-3 col-12 d-flex flex-row justify-content-center align-items-center'>
-                                    <img class='m-3' style='float: left;' src='$imagen' alt='' height='60px'>
+                                    <img class='m-3' style='float: left;' src='$urlImagen' alt='' height='60px'>
                                 </div>
                                 <div class='col-lg-9 col-12 justify-content-center'>
                                     <p class='textoArea' style='text-align: justify;'>
